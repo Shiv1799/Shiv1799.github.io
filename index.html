@@ -6,7 +6,6 @@
 
   <title>Om Tiwari | Robotics & AI Engineer</title>
   <meta name="description" content="Om Tiwari – Robotics, Autonomous Systems, Computer Vision and Generative AI Engineer." />
-
   <base href="/" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -45,21 +44,34 @@
       border-bottom: 1px solid #1f2937;
       padding: 14px 10%;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
       z-index: 1000;
     }
 
-    nav a { margin-left: 20px; font-size: 0.9rem; }
-
     /* HERO */
     header {
-      padding: 150px 10% 120px;
+      padding: 170px 10% 120px;
       background: radial-gradient(circle at top, #111827, #0b0e14 70%);
     }
 
-    header h1 { font-size: 3.4rem; margin-bottom: 10px; }
-    header p { font-size: 1.3rem; color: var(--muted); max-width: 900px; }
+    .name {
+      font-size: 4.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .role {
+      font-size: 1.5rem;
+      color: var(--accent2);
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 900px;
+    }
 
     .cta {
       margin-top: 32px;
@@ -77,29 +89,12 @@
 
     section {
       padding: 100px 10%;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeIn 0.8s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 { font-size: 2.5rem; margin-bottom: 30px; }
-    h3 { color: var(--accent2); margin-bottom: 20px; }
+    h3 { color: var(--accent2); }
 
     /* PROJECTS */
-    .filters button {
-      margin-right: 12px;
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 1px solid var(--accent);
-      background: none;
-      color: var(--accent);
-      cursor: pointer;
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -110,7 +105,7 @@
     .card {
       background: var(--card);
       border-radius: 16px;
-      overflow: hidden;
+      padding: 22px;
       border: 1px solid #1f2937;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -119,14 +114,6 @@
       transform: translateY(-8px);
       box-shadow: 0 18px 40px rgba(0,0,0,0.45);
     }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card-content { padding: 22px; }
 
     .tag {
       display: inline-block;
@@ -138,36 +125,13 @@
       color: var(--muted);
     }
 
-    /* EXPERIENCE */
-    .timeline {
-      border-left: 3px solid var(--accent);
-      padding-left: 30px;
-    }
-
-    .timeline-item {
-      margin-bottom: 40px;
-      cursor: pointer;
-    }
-
-    .timeline-item:hover { background: rgba(255,255,255,0.02); }
-
-    .company {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .company img {
-      height: 36px;
-      background: white;
-      padding: 4px;
-      border-radius: 6px;
-    }
-
-    .details {
-      display: none;
-      margin-top: 12px;
-      color: var(--muted);
+    /* CONTACT */
+    .contact-box {
+      background: var(--card);
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 700px;
     }
 
     footer {
@@ -182,19 +146,19 @@
 <body>
 
 <nav>
-  <strong>Om Tiwari</strong>
-  <div>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#publications">Publications</a>
-  </div>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#publications">Publications</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <header>
-  <h1>Robotics & AI Engineer</h1>
+  <div class="name">Om Tiwari</div>
+  <div class="role">Robotics & AI Engineer</div>
+
   <p>
-    Building real-time perception, autonomy, and multimodal AI systems for robots and autonomous vehicles
-    using ROS/ROS2, LiDAR & stereo vision, reinforcement learning, and deep learning.
+    Robotics, autonomous systems, and multimodal AI engineer with hands-on experience
+    in perception, self-driving systems, robotic manipulation, and generative AI.
   </p>
 
   <div class="cta">
@@ -204,85 +168,32 @@
   </div>
 </header>
 
-<section id="about">
-  <h2>About Me</h2>
-
-  <div style="display:grid;grid-template-columns:260px 1fr;gap:40px;">
-    <img src="assets/images/om_pic.jpg" alt="Om Tiwari" style="width:260px;border-radius:18px;border:1px solid #1f2937;">
-    <div>
-      <p>
-        Robotics & Perception Software Engineer with a Master’s in Intelligent Systems & Robotics.
-        Experienced in building scalable, real-time autonomy and perception pipelines for robots
-        and autonomous vehicles.
-      </p>
-
-      <p>
-        Strong background in ROS/ROS2 middleware, 3D perception (LiDAR & stereo vision),
-        sensor fusion, reinforcement learning, and deep learning-based perception.
-      </p>
-
-      <p>
-        Actively exploring Generative AI, Multimodal Models, and LLMs for context-aware
-        perception and human–robot interaction.
-      </p>
-    </div>
-  </div>
-</section>
-
 <section id="projects">
-  <h2>Projects</h2>
-
-  <div class="filters">
-    <button onclick="filterProjects('all')">All</button>
-    <button onclick="filterProjects('robotics')">Robotics</button>
-    <button onclick="filterProjects('genai')">Generative AI</button>
-    <button onclick="filterProjects('vision')">Computer Vision</button>
-  </div>
-
-  <div id="projects-container" class="grid"></div>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item" onclick="toggleDetails(this)">
-      <div class="company">
-        <img src="assets/images/logos/bosch.png">
-        <strong>Bosch – Robotics Intern</strong>
-      </div>
-      <p>Foundation models and motion planning for robotic manipulation.</p>
-      <div class="details">
-        <ul>
-          <li>Franka Panda manipulation (MoveIt, FlexBE)</li>
-          <li>Reinforcement learning with MuJoCo + Stable-Baselines3</li>
-          <li>Collision-free motion planning</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item" onclick="toggleDetails(this)">
-      <div class="company">
-        <img src="assets/images/logos/astemo.png">
-        <strong>Hitachi Astemo – Master Thesis</strong>
-      </div>
-      <p>Pseudo-LiDAR from stereo vision for autonomous driving.</p>
-      <div class="details">
-        <a href="assets/pdf/Master_Thesis_Pseudo_LiDAR.pdf" target="_blank">Read Thesis ↗</a>
-      </div>
-    </div>
-
-  </div>
+  <h2>Selected Projects</h2>
+  <div class="grid" id="projects-container"></div>
 </section>
 
 <section id="publications">
-  <h2>Publications & Seminar</h2>
+  <h2>Thesis & Academic Work</h2>
   <ul>
-    <li><a href="https://ieeexplore.ieee.org" target="_blank">IEEE IoT – Automated Weed Detection ↗</a></li>
-    <li><a href="https://www.sciencedirect.com" target="_blank">Journal – Skin Cancer Detection ↗</a></li>
-    <li><a href="assets/pdf/Seminar_Slides.pdf" target="_blank">Seminar – Safety-Critical Perception ↗</a></li>
+    <li><a href="https://github.com/Shiv1799/Master-Thesis-Is-Pseudo-LiDAR-better-than-LiDAR-" target="_blank">
+      Master Thesis – Is Pseudo-LiDAR Better Than LiDAR? ↗</a></li>
+
+    <li><a href="https://github.com/Shiv1799/Safety-Critical-Multi-Modal-Object-Detection-in-Autonomous-System" target="_blank">
+      Seminar – Safety-Critical Multi-Modal Object Detection ↗</a></li>
   </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <div class="contact-box">
+    <p><strong>Email:</strong> your.email@domain.com</p>
+    <p><strong>Location:</strong> Germany</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/Shiv1799" target="_blank">github.com/Shiv1799</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/om-tiwari-b1687314b" target="_blank">View Profile ↗</a></p>
+    <p><strong>CV:</strong> <a href="assets/pdf/Om_Tiwari_CV.pdf" target="_blank">Download PDF ↗</a></p>
+  </div>
 </section>
 
 <footer>
@@ -290,60 +201,54 @@
 </footer>
 
 <script>
-  const projects = [
-    {
-      title: "Stereo-based Pseudo-LiDAR for Autonomous Driving",
-      category: "robotics",
-      github: "https://github.com/USERNAME/PROJECT",
-      demo: "assets/pdf/Master_Thesis_Pseudo_LiDAR.pdf",
-      image: "assets/images/projects/pseudo_lidar.png",
-      desc: "ROS2 stereo vision pipeline producing LiDAR-like point clouds.",
-      tags: ["ROS2", "Stereo Vision", "3D Perception"]
-    },
-    {
-      title: "MeetingMind – LLM-Powered Meeting Intelligence",
-      category: "genai",
-      github: "https://github.com/USERNAME/PROJECT",
-      demo: "#",
-      image: "assets/images/projects/meetingmind.png",
-      desc: "AI assistant for transcription, correction, and summarization.",
-      tags: ["LLMs", "NLP", "Whisper"]
-    }
-  ];
-
-  const container = document.getElementById('projects-container');
-
-  function renderProjects(filter) {
-    container.innerHTML = '';
-    projects
-      .filter(p => filter === 'all' || p.category === filter)
-      .forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <img src="${p.image}" loading="lazy">
-          <div class="card-content">
-            <h4>${p.title}</h4>
-            <p>${p.desc}</p>
-            ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-            <div style="margin-top:14px;">
-              <a href="${p.github}" target="_blank">GitHub ↗</a>
-              ${p.demo !== "#" ? ` · <a href="${p.demo}" target="_blank">Details ↗</a>` : ""}
-            </div>
-          </div>
-        `;
-        container.appendChild(card);
-      });
+const projects = [
+  {
+    title: "AI Meeting Assistant",
+    link: "https://github.com/Shiv1799/AI-Meeting-Assistant",
+    desc: "LLM-based system for transcription, terminology correction, and structured meeting summaries.",
+    tags: ["LLMs", "NLP", "Audio"]
+  },
+  {
+    title: "Fashion Style Analyzer",
+    link: "https://github.com/Shiv1799/Fashion-Style-Analyzer",
+    desc: "Multimodal vision-language fashion analysis using embeddings and RAG.",
+    tags: ["VLM", "RAG", "Computer Vision"]
+  },
+  {
+    title: "Model Quantization in PyTorch",
+    link: "https://github.com/Shiv1799/Quantization_pytorch",
+    desc: "Exploration of quantization techniques for efficient deep learning inference.",
+    tags: ["PyTorch", "Optimization"]
+  },
+  {
+    title: "Erasmus Industrial Challenge – OV2SLAM",
+    link: "https://github.com/Shiv1799/Erasmus_industrial_challenge_Ov2slam",
+    desc: "Visual SLAM challenge project focused on robustness and real-world constraints.",
+    tags: ["SLAM", "Robotics"]
+  },
+  {
+    title: "Self-Driving Car (Bachelor Project)",
+    link: "https://github.com/Shiv1799/self_driving_car",
+    desc: "Autonomous driving pipeline with perception, planning, and control.",
+    tags: ["Autonomous Driving", "Computer Vision"]
   }
+];
 
-  function filterProjects(cat) { renderProjects(cat); }
+const container = document.getElementById("projects-container");
 
-  function toggleDetails(el) {
-    const d = el.querySelector('.details');
-    d.style.display = d.style.display === 'block' ? 'none' : 'block';
-  }
-
-  renderProjects('all');
+projects.forEach(p => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <h3>${p.title}</h3>
+    <p>${p.desc}</p>
+    ${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}
+    <div style="margin-top:14px;">
+      <a href="${p.link}" target="_blank">View Project ↗</a>
+    </div>
+  `;
+  container.appendChild(card);
+});
 </script>
 
 </body>
