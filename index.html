@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Om Tiwari | Robotics & AI Engineer</title>
+  <meta name="description" content="Om Tiwari – Robotics, Autonomous Systems, Computer Vision and Generative AI Engineer." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --card: #111827;
+      --text: #e6e6eb;
+      --muted: #9ca3af;
+      --accent: #7aa2f7;
+      --accent2: #9ece6a;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(12px);
+      background: rgba(11,14,20,0.85);
+      border-bottom: 1px solid #1f2937;
+      padding: 14px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav a { margin-left: 20px; font-size: 0.9rem; }
+
+    /* HERO */
+    header {
+      padding: 150px 10% 120px;
+      background: radial-gradient(circle at top, #111827, #0b0e14 70%);
+    }
+
+    header h1 { font-size: 3.4rem; margin-bottom: 10px; }
+    header p { font-size: 1.3rem; color: var(--muted); max-width: 800px; }
+
+    section { padding: 100px 10%; }
+    h2 { font-size: 2.5rem; margin-bottom: 30px; }
+    h3 { color: var(--accent2); margin-bottom: 20px; }
+
+    /* FILTERS */
+    .filters button {
+      margin-right: 12px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--accent);
+      background: none;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    /* PROJECT GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #1f2937;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content { padding: 22px; }
+
+    .tag {
+      display: inline-block;
+      margin: 6px 6px 0 0;
+      padding: 5px 12px;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: #1f2937;
+      color: var(--muted);
+    }
+
+    /* EXPERIENCE */
+    .timeline {
+      border-left: 3px solid var(--accent);
+      padding-left: 30px;
+    }
+
+    .timeline-item { margin-bottom: 40px; }
+    .company {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .company img { height: 36px; background: white; padding: 4px; border-radius: 6px; }
+
+    footer {
+      padding: 60px 10%;
+      border-top: 1px solid #1f2937;
+      text-align: center;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <strong>Om Tiwari</strong>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Robotics & AI Engineer</h1>
+  <p>
+    Robotics, autonomous systems, and multimodal AI engineer with hands-on experience in
+    self-driving systems, robotic manipulation, computer vision, and generative AI.
+  </p>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div style="display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start;">
+    <img src="om_pic.jpg" alt="Om Tiwari" style="width:260px;border-radius:18px;border:1px solid #1f2937;">
+    <div>
+      <p>👋 I’m a <strong>Robotics & Perception Software Engineer</strong> with a Master’s in Computer Science (Intelligent Systems & Robotics) and hands-on experience building real-time, machine learning-driven perception, navigation, and autonomy software for intelligent robots and autonomous vehicles.</p>
+
+      <p>I specialize in engineering scalable robotics systems that combine <strong>ROS/ROS2 middleware</strong>, <strong>3D perception (LiDAR & stereo vision)</strong>, sensor fusion, and deep learning into production-ready pipelines. I’ve architected and optimized perception modules and navigation stacks that deliver measurable improvements in detection accuracy, latency, and robustness across simulated and real-world platforms.</p>
+
+      <p>I’m also actively exploring <strong>Generative AI, Multimodal Models, and Large Language Models (LLMs)</strong> to bring context-aware, adaptive intelligence to perception and human–robot interaction workflows.</p>
+
+      <p><strong>Portfolio:</strong> Projects in autonomous navigation, perception pipelines, simulation integration, and AI-enhanced robotics software.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:50px">Experience by Technology (Approx.)</h3>
+  <ul>
+    <li><strong>Robotics & ROS (ROS/ROS2):</strong> ~4+ years</li>
+    <li><strong>Autonomous Driving & Navigation:</strong> ~3+ years</li>
+    <li><strong>3D Perception (LiDAR, Stereo Vision):</strong> ~3+ years</li>
+    <li><strong>Computer Vision & Deep Learning:</strong> ~4+ years</li>
+    <li><strong>Python & C++:</strong> ~5+ years</li>
+    <li><strong>Simulation (CARLA, MuJoCo, Gazebo):</strong> ~3 years</li>
+    <li><strong>Generative AI / LLMs / Multimodal AI:</strong> ~1.5+ years</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="filters">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('robotics')">Robotics</button>
+    <button onclick="filterProjects('genai')">Generative AI</button>
+    <button onclick="filterProjects('vision')">Computer Vision</button>
+  </div>
+
+  <div id="projects-container" class="grid"></div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="company">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Bosch-logo.svg">
+        <strong>Bosch – Robotics Intern</strong>
+      </div>
+      <p>
+        Integrated foundational models into a Franka Panda robot for cloth folding and manipulation.
+        Worked with MoveIt and FlexBE for collision-free motion planning and used MuJoCo and
+        Stable-Baselines3 to refine manipulation strategies using reinforcement learning.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="company">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Hitachi_Astemo_logo.svg">
+        <strong>Hitachi Astemo – Master Thesis (Autonomous Driving)</strong>
+      </div>
+      <p>
+        Developed an end-to-end pseudo-LiDAR pipeline in ROS2 using stereo vision, unifying depth
+        estimation and 3D object detection. Conducted SiL testing in CARLA and reduced false positives
+        by 30% through systematic evaluation and parameter tuning.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="company">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/DFKI_Logo.svg">
+        <strong>DFKI & Fraunhofer ITWM – Research Assistant</strong>
+      </div>
+      <p>
+        Implemented and optimized deep learning models including YOLOv4 and PointNet++ for urban
+        scene understanding and object detection. Improved detection accuracy through data
+        augmentation, synthetic data generation, and hyperparameter tuning.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications & Seminar</h2>
+  <ul>
+    <li>IEEE IoT Conference – Automated Weed Detection using Convolutional Neural Networks</li>
+    <li>Journal of Advanced Research – Intelligent Skin Cancer Detection Mobile Application</li>
+    <li>Seminar: Safety-Critical Multi-Modal Object Detection in Autonomous Systems</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 Om Tiwari · GitHub Pages</p>
+</footer>
+
+<script>
+  const projects = [
+    {
+      title: "Pseudo-LiDAR from Stereo Vision",
+      category: "robotics",
+      link: "https://github.com/Shiv1799",
+      image: "https://images.unsplash.com/photo-1581091870627-3b9c5a1c1c85",
+      desc: "ROS2-based stereo vision pipeline for LiDAR-like 3D perception in autonomous driving.",
+      tags: ["ROS2", "Autonomous Driving", "Stereo Vision"]
+    },
+    {
+      title: "MeetingMind AI",
+      category: "genai",
+      link: "https://github.com/Shiv1799",
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+      desc: "LLM-powered meeting assistant generating structured minutes and action items from audio.",
+      tags: ["Whisper", "LLMs", "NLP"]
+    },
+    {
+      title: "Fashion Style Analyzer",
+      category: "vision",
+      link: "https://github.com/Shiv1799",
+      image: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+      desc: "Multimodal vision-language fashion analysis system using RAG.",
+      tags: ["VLM", "RAG", "Computer Vision"]
+    }
+  ];
+
+  const container = document.getElementById('projects-container');
+
+  function renderProjects(filter) {
+    container.innerHTML = '';
+    projects
+      .filter(p => filter === 'all' || p.category === filter)
+      .forEach(p => {
+        const card = document.createElement('a');
+        card.href = p.link;
+        card.target = '_blank';
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${p.image}">
+          <div class="card-content">
+            <h4>${p.title}</h4>
+            <p>${p.desc}</p>
+            ${p.tags.map(t => `<span class='tag'>${t}</span>`).join('')}
+          </div>`;
+        container.appendChild(card);
+      });
+  }
+
+  function filterProjects(cat) { renderProjects(cat); }
+
+  renderProjects('all');
+</script>
+
+</body>
+</html>
