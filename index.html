@@ -34,7 +34,7 @@
     a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
     a:hover { text-decoration: underline; color: #fff; }
 
-    /* NAV - UPDATED FOR CENTERED NAME */
+    /* NAV - CENTERED NAME */
     nav {
       position: fixed;
       top: 0; width: 100%;
@@ -45,7 +45,7 @@
       
       /* Layout for centering */
       display: flex;
-      justify-content: flex-end; /* Pushes links to the right */
+      justify-content: flex-end; 
       align-items: center;
       z-index: 1000;
     }
@@ -292,7 +292,7 @@
         justify-content: center;
       }
       .nav-name {
-        position: static; /* Reset absolute positioning for mobile */
+        position: static;
         transform: none;
         margin-bottom: 5px;
       }
@@ -329,17 +329,35 @@
     <img src="assets/om_pic.jpg" alt="Om Tiwari" class="profile-photo" />
     
     <div class="summary-text">
-      <h2 style="margin-top:0; border:none; padding:0; margin-bottom:20px;">Professional Summary</h2>
-      <p>
-        Computer Science graduate with over <strong>2+ years of applied experience</strong> in robotics,
-        computer vision, and autonomous systems. I specialize in building and deploying <strong>ROS2 pipelines</strong> for
-        SLAM, object detection, and sensor fusion using LiDAR, stereo vision, and deep learning.
+      <h2 style="margin-top:0; border:none; padding:0; margin-bottom:16px;">Professional Summary</h2>
+      
+      <p style="font-size: 1.1rem; color: #fff; margin-bottom: 24px;">
+        👋 <strong>I build intelligent brains for robots.</strong>
       </p>
+
       <p>
-        My work involves applying simulation tools (Gazebo, CARLA) and embedded platforms like <strong>Nvidia Jetson</strong> 
-        to solve real-world problems. I have improved detection accuracy and reduced false positives by up to 30% 
-        in both simulation and physical testing.
+        With <strong>4+ years of R&D experience</strong> across top research institutes (<strong>Fraunhofer, DFKI</strong>) 
+        and automotive leaders (<strong>Hitachi, Bosch</strong>), I specialize in engineering scalable perception pipelines 
+        and autonomous navigation systems.
       </p>
+
+      <p>
+        I bridge the gap between <strong>Classical Robotics</strong> (ROS2, SLAM, Sensor Fusion) and modern 
+        <strong>Generative AI</strong> (VLM, RAG, Agents), deploying robust solutions on embedded platforms like 
+        <strong>Nvidia Jetson</strong> for real-world applications.
+      </p>
+      
+      <ul style="margin: 24px 0; padding-left: 20px; color: var(--muted);">
+        <li style="margin-bottom:8px;">
+          🚀 <strong>Impact:</strong> Optimized processing speeds by <strong>15%</strong> and reduced detection false positives by <strong>30%</strong>.
+        </li>
+        <li style="margin-bottom:8px;">
+          🏢 <strong>Experience:</strong> 4+ years in Industry & Research (Hitachi, Bosch, Fraunhofer, DFKI).
+        </li>
+        <li>
+          🧠 <strong>Tech Stack:</strong> ROS2, C++, Python, PyTorch, LLMs/Agents, Docker, Gazebo.
+        </li>
+      </ul>
 
       <div class="cta-buttons">
         <a href="assets/Om_Tiwari_Resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
@@ -353,27 +371,22 @@
 <section id="skills">
   <h2>Technical Skills</h2>
   <div class="grid">
-    
     <div class="card">
       <h3>Programming & Robotics</h3>
-      <p>Python, C/C++, ROS, Linux(Ubuntu), Git/GitHub, Nav2, MoveIt, FlexBE, SLAM, Object Detection, Raspberry Pi, Nvidia Jetson, LLM API Integration, Gradio</p>
+      <p>Python, C/C++, ROS, Linux (Ubuntu), Git, Nav2, MoveIt, FlexBE, SLAM, Object Detection, Raspberry Pi, Nvidia Jetson, LLM API Integration, Gradio</p>
     </div>
-
     <div class="card">
       <h3>AI & GenAI Stack</h3>
       <p>NumPy, Pandas, Keras, TensorFlow, PyTorch, LangChain, LangGraph, RAG, Multimodal Retrieval, Vision-Language Models, ASR (Whisper), Agentic AI</p>
     </div>
-
     <div class="card">
       <h3>Simulation & Tools</h3>
-      <p>Docker, Gazebo, MuJoCo, StableBaselines3, Carla</p>
+      <p>Docker, Gazebo, MuJoCo, StableBaselines3, CARLA</p>
     </div>
-
     <div class="card">
       <h3>Spoken Languages</h3>
       <p><strong>German:</strong> B2 (Aiming for C1)<br><strong>English:</strong> C1 (IELTS)</p>
     </div>
-
   </div>
 </section>
 
@@ -393,9 +406,9 @@
       <h3>Master Thesis (AD)</h3>
       <div class="card-meta">
         <span>Hitachi Astemo</span>
-        <span>Jan 2025 – Present</span>
+        <span>Jan 2025 – Aug 2025</span>
       </div>
-      <p>Integrated a ROS2 3D object detection pipeline with 4 cameras and 2 LiDARs. Resolved stereo vision synchronization issues, improving accuracy by 15% via SiL testing.</p>
+      <p>Integrated a ROS2 3D object detection pipeline with 4 cameras and 2 LiDARs. Resolved stereo vision synchronization, improving accuracy by 15% via SiL testing in CARLA.</p>
       <div class="bottom-tag">🛠 ROS2 • Docker • CARLA • LiDAR</div>
     </div>
 
@@ -415,9 +428,9 @@
       <h3>Research Assistant</h3>
       <div class="card-meta">
         <span>Fraunhofer ITWM</span>
-        <span>Dates</span>
+        <span>Jan 2022 – Sep 2023</span>
       </div>
-      <p>Implemented advanced deep learning models (PointNet++) for urban scene understanding. Integrated YOLOv4 with DarkHelp C++ API for house feature recognition, optimizing processing speeds by 15%.</p>
+      <p>Implemented advanced DL models (PointNet++) for urban scene understanding. Integrated YOLOv4 with DarkHelp C++ API for feature recognition, optimizing speed by 15%.</p>
       <div class="bottom-tag">🛠 PointNet++ • YOLOv4 • C++ • DL</div>
     </div>
 
@@ -478,8 +491,8 @@
         <span>Gen AI & CV</span>
         <span>RAG System</span>
       </div>
-      <p>Multimodal Vision-Language RAG System capable of analyzing clothing styles and trends from images.</p>
-      <div class="bottom-tag">🛠 RAG • Multimodal • Gen AI</div>
+      <p>Multimodal vision-language retrieval system using ResNet50 + Llama 3.2 Vision. Features a Gradio UI for interactive fashion analysis and catalog generation.</p>
+      <div class="bottom-tag">🛠 RAG • Llama 3.2 • Gradio</div>
     </a>
 
     <a href="https://github.com/Shiv1799/AI-Meeting-Assistant" target="_blank" class="card project-card" data-category="gen-ai">
@@ -490,8 +503,8 @@
         <span>Gen AI</span>
         <span>NLP</span>
       </div>
-      <p>LLM-Powered Meeting Intelligence Platform that transcribes and summarizes conversations automatically.</p>
-      <div class="bottom-tag">🛠 LLMs • NLP • Intelligence</div>
+      <p>LLM-powered meeting intelligence platform converting audio to tasks using Whisper ASR and multi-stage LLM pipelines.</p>
+      <div class="bottom-tag">🛠 Whisper • LLMs • NLP</div>
     </a>
 
     <a href="https://github.com/Shiv1799/self_driving_car" target="_blank" class="card project-card" data-category="robotics">
@@ -548,7 +561,6 @@
 <section id="education">
   <h2>Education</h2>
   <div class="grid">
-    
     <div class="card">
       <img src="assets/edu_rptu.jpg" alt="RPTU" class="card-img">
       <h3>M.Sc. Computer Science</h3>
@@ -559,7 +571,6 @@
       <p>Specialization in Intelligent Systems and Robotics. <br>Thesis: Autonomous Driving Perception at Hitachi Astemo.</p>
       <div class="bottom-tag">🎓 Master of Science</div>
     </div>
-
     <div class="card">
       <img src="assets/edu_krishna.jpg" alt="Krishna Engineering College" class="card-img">
       <h3>B.Tech. Computer Science</h3>
@@ -570,14 +581,12 @@
       <p>Foundation in Algorithms, Data Structures, and Embedded Systems. <br>Graduated with First Division.</p>
       <div class="bottom-tag">🎓 Bachelor of Technology</div>
     </div>
-
   </div>
 </section>
 
 <section id="publications">
   <h2>Publications & Seminars</h2>
   <div class="grid">
-    
     <a href="https://github.com/Shiv1799/Safety-Critical-Multi-Modal-Object-Detection-in-Autonomous-System" target="_blank" class="card">
       <div class="link-icon">↗</div>
       <img src="assets/project_seminar.jpg" alt="Seminar" class="card-img">
@@ -586,7 +595,7 @@
         <span>Seminar</span>
         <span>Safety</span>
       </div>
-      <p>Multi-Modal Object Detection in Autonomous Systems focusing on sensor fusion (LiDAR, Radar, Camera).</p>
+      <p>Researched sensor fusion for multi-modal object detection. Analyzed early/late fusion for LiDAR, Radar, Camera.</p>
       <div class="bottom-tag">📚 Research Seminar</div>
     </a>
     
@@ -597,7 +606,7 @@
         <span>IEEE IoT Conference</span>
         <span>ISBN: 978-1-7281-1253-4</span>
       </div>
-      <p>Proposed an experimental setup for utilizing Convolutional Neural Networks to detect weeds in agricultural crops with high precision.</p>
+      <p>Proposed an experimental setup for utilizing Convolutional Neural Networks to detect weeds in agricultural crops.</p>
       <div class="bottom-tag">📄 Conference Paper</div>
     </div>
 
@@ -611,7 +620,6 @@
       <p>Developed an intelligent mobile application using deep learning models to classify skin lesions and detect early signs of cancer.</p>
       <div class="bottom-tag">📄 Journal Article</div>
     </div>
-
   </div>
 </section>
 
@@ -624,34 +632,25 @@
 </footer>
 
 <script>
-  // Filter for PROJECTS
   function filterProjects(category) {
     updateFilters('proj-btn', 'project-card', category);
   }
-
-  // Filter for EXPERIENCE
   function filterExperience(category) {
     updateFilters('exp-btn', 'exp-card', category);
   }
-
-  // Generic Filter Logic
   function updateFilters(btnClass, cardClass, category) {
     const buttons = document.querySelectorAll('.' + btnClass);
     buttons.forEach(btn => btn.classList.remove('active'));
     
-    // Find active button
     const activeBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(category));
     if (activeBtn) activeBtn.classList.add('active');
 
     const cards = document.querySelectorAll('.' + cardClass);
     cards.forEach(card => {
-      // Get the categories string (e.g. "gen-ai cv")
       const cardCategories = card.getAttribute('data-category');
-      
       if (category === 'all') {
         card.style.display = 'flex';
       } else if (cardCategories.includes(category)) { 
-        // Checks if the category exists within the card's category string
         card.style.display = 'flex';
       } else {
         card.style.display = 'none';
