@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Om Tiwari | Robotics & AI Engineer</title>
-  <meta name="description" content="Om Tiwari – Robotics, Autonomous Systems, Computer Vision and Generative AI Engineer." />
+  <meta name="description" content="Robotics, Autonomous Systems, Computer Vision and Generative AI Engineer" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -46,27 +46,23 @@
     .nav-name {
       font-size:1.6rem;
       font-weight:700;
-      letter-spacing:0.5px;
+      letter-spacing:.5px;
     }
 
     nav a {
-      margin-left:20px;
-      font-size:0.9rem;
+      margin-left:18px;
+      font-size:.9rem;
       color:var(--muted);
     }
     nav a:hover { color:var(--accent); }
 
     /* HERO */
     header {
-      padding:160px 10% 100px;
+      padding:160px 10% 110px;
       background:radial-gradient(circle at top,#111827,#0b0e14 70%);
     }
 
-    header h1 {
-      font-size:3.8rem;
-      margin-bottom:12px;
-    }
-
+    header h1 { font-size:3.8rem; margin-bottom:12px; }
     header p {
       font-size:1.3rem;
       color:var(--muted);
@@ -86,7 +82,7 @@
     section:first-of-type { border-top:none; }
 
     h2 { font-size:2.6rem; margin-bottom:32px; }
-    h3 { color:var(--accent2); margin-bottom:12px; }
+    h3 { color:var(--accent2); margin-bottom:8px; }
 
     /* SUMMARY */
     .summary {
@@ -94,7 +90,6 @@
       border:1px solid #1f2937;
       border-radius:16px;
       padding:28px;
-      font-size:1.05rem;
     }
 
     /* ABOUT */
@@ -131,17 +126,7 @@
       box-shadow:0 16px 36px rgba(0,0,0,.45);
     }
 
-    .tag {
-      display:inline-block;
-      margin:6px 6px 0 0;
-      padding:5px 12px;
-      font-size:.75rem;
-      border-radius:999px;
-      background:#1f2937;
-      color:var(--muted);
-    }
-
-    /* EXPERIENCE */
+    /* TIMELINE */
     .timeline {
       display:flex;
       flex-direction:column;
@@ -155,11 +140,6 @@
       padding:26px;
     }
 
-    .timeline-header h3 {
-      margin:0;
-      font-size:1.2rem;
-    }
-
     .timeline-header span {
       font-size:.85rem;
       color:var(--muted);
@@ -167,14 +147,11 @@
 
     .timeline-item ul {
       padding-left:18px;
-      margin-top:14px;
+      margin-top:12px;
     }
 
-    .timeline-item li { margin-bottom:8px; }
-
-    /* FILTERS */
+    /* PROJECT FILTER */
     .filters { margin-bottom:24px; }
-
     .filters button {
       margin-right:12px;
       padding:8px 18px;
@@ -184,7 +161,6 @@
       color:var(--accent);
       cursor:pointer;
     }
-
     .filters button.active {
       background:var(--accent);
       color:#0b0e14;
@@ -214,9 +190,11 @@
   <div class="nav-name">Om Tiwari</div>
   <div>
     <a href="#summary">Summary</a>
-    <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#publications">Publications</a>
+    <a href="#seminar">Seminar</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
@@ -224,61 +202,18 @@
 
 <header>
   <h1>Robotics & AI Engineer</h1>
-  <p>
-    Designing real-time perception, autonomy, and multimodal AI systems for
-    intelligent robots and autonomous vehicles.
-  </p>
+  <p>Designing real-time perception, autonomy, and multimodal AI systems for intelligent robots.</p>
 </header>
 
 <!-- SUMMARY -->
 <section id="summary">
   <h2>Professional Summary</h2>
   <div class="summary">
-    Computer Science graduate with over <strong>2+ years of applied experience</strong> in
-    robotics, computer vision, and autonomous systems. Built and deployed
-    <strong>ROS2 pipelines</strong> for SLAM, object detection, and sensor fusion using
-    <strong>LiDAR, stereo vision, and deep learning</strong>.
-    Applied simulation tools and embedded platforms (NVIDIA Jetson, Raspberry Pi)
-    in academic, research, and industry environments, and implemented ML models
-    using <strong>PyTorch and TensorFlow</strong>.
-    Achieved measurable improvements, including <strong>up to 30% reduction in false positives</strong>
-    across simulation and real-world evaluations.
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <div class="about-grid">
-    <img src="assets/om_pic.jpg" alt="Om Tiwari" class="profile-photo" />
-    <div>
-      <p>
-        👋 I’m a <strong>Robotics & Perception Software Engineer</strong> with a Master’s in
-        Computer Science (Intelligent Systems & Robotics), experienced in building
-        real-time ML-driven perception, navigation, and autonomy software.
-      </p>
-      <p>
-        I specialize in ROS/ROS2-based robotics systems, 3D perception (LiDAR & stereo),
-        sensor fusion, and deep learning pipelines deployed across simulation and
-        real-world platforms.
-      </p>
-      <p>
-        I also explore Generative AI and multimodal models to enable context-aware
-        perception and human–robot interaction.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Core Skills</h2>
-  <div class="grid">
-    <div class="card"><h3>Robotics & Autonomy</h3><p>ROS/ROS2, C++, Python, Navigation, Control, Sensor Fusion</p></div>
-    <div class="card"><h3>Perception & Vision</h3><p>LiDAR, Stereo Vision, 3D Perception, Detection & Segmentation</p></div>
-    <div class="card"><h3>AI & Machine Learning</h3><p>PyTorch, TensorFlow, CNNs, Vision–Language Models, RAG, LLMs</p></div>
-    <div class="card"><h3>Simulation & Systems</h3><p>CARLA, Docker, Linux, NVIDIA Jetson, Raspberry Pi</p></div>
-    <div class="card"><h3>Languages</h3><p>English (C1 – IELTS) · German (B2 – progressing, C1 willingness)</p></div>
+    Computer Science graduate with over <strong>2+ years of applied experience</strong> in robotics,
+    computer vision, and autonomous systems. Built and deployed <strong>ROS2 pipelines</strong> for
+    SLAM, object detection, and sensor fusion using <strong>LiDAR, stereo vision, and deep learning</strong>.
+    Improved detection accuracy and reduced false positives by up to <strong>30%</strong> in simulation
+    and real-world tests using PyTorch and TensorFlow.
   </div>
 </section>
 
@@ -287,40 +222,60 @@
   <h2>Work Experience</h2>
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-header">
-        <h3>Hitachi Astemo — Master Thesis (Autonomous Driving)</h3>
-        <span>Jan 2025 – Aug 2025 · Munich, Germany</span>
-      </div>
+      <h3>Hitachi Astemo — Master Thesis (Autonomous Driving)</h3>
+      <span>Jan 2025 – Aug 2025 · Munich, Germany</span>
       <ul>
-        <li>Developed an end-to-end pseudo-LiDAR system using stereo vision in ROS2.</li>
-        <li>Conducted SiL testing in CARLA under varied environmental conditions.</li>
-        <li>Reduced false positives by ~30% via evaluation and tuning.</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-header">
-        <h3>Bosch — Robotics Intern</h3>
-        <span>Jan 2024 – Jun 2024 · Renningen, Germany</span>
-      </div>
-      <ul>
-        <li>Integrated ML pipelines into a Franka Panda manipulation system.</li>
-        <li>Implemented motion planning using MoveIt and FlexBE.</li>
+        <li>Developed an end-to-end pseudo-LiDAR pipeline using stereo vision in ROS2.</li>
+        <li>Performed SiL testing in CARLA under varied weather and lighting.</li>
+        <li>Reduced false positives by ~30% through evaluation and tuning.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="filters">
-    <button class="active" onclick="setCategory('robotics',this)">Robotics</button>
-    <button onclick="setCategory('genai',this)">Generative AI</button>
-    <button onclick="setCategory('vision',this)">Computer Vision</button>
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Master of Science — Computer Science</h3>
+      <span>10/2021 – Present · Technische Universität Kaiserslautern (RPTU), Germany</span>
+    </div>
+    <div class="timeline-item">
+      <h3>Bachelor of Technology — Computer Science</h3>
+      <span>08/2016 – 09/2020 · Krishna Engineering College, New Delhi, India</span>
+    </div>
   </div>
-  <h3 id="category-title">Robotics Projects</h3>
-  <div id="projects-container" class="grid"></div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <h2>Publications</h2>
+  <ul>
+    <li>
+      <strong>An Experimental Setup for Utilizing CNN in Automated Weed Detection</strong><br/>
+      4th IEEE International Conference on Internet of Things: Smart Innovation and Usages<br/>
+      ISBN: 978-1-7281-1253-4
+    </li>
+    <li>
+      <strong>Intelligent Skin Cancer Detection Mobile Application Using CNN</strong><br/>
+      Journal of Advanced Research in Dynamical and Control Systems<br/>
+      Volume 11, Special Issue 07, Pages 253–259
+    </li>
+  </ul>
+</section>
+
+<!-- SEMINAR -->
+<section id="seminar">
+  <h2>Seminar</h2>
+  <div class="timeline-item">
+    <h3>Safety-Critical Multi-Modal Object Detection in Autonomous Systems</h3>
+    <span>Technische Universität Kaiserslautern · Jun 2022 – Feb 2023</span>
+    <ul>
+      <li>Investigated early and late fusion techniques across LiDAR, radar, and camera data.</li>
+      <li>Reviewed and synthesized insights from 10+ peer-reviewed papers with focus on safety.</li>
+    </ul>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -329,45 +284,14 @@
   <div class="contact">
     <p><strong>Email:</strong> tiwari@rptu.de</p>
     <p><strong>Location:</strong> Germany</p>
-    <p><strong>Working & Living:</strong> Currently working and living in Germany</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/Shiv1799" target="_blank">github.com/Shiv1799</a></p>
+    <p><strong>Status:</strong> Working and living in Germany</p>
+    <p><strong>GitHub:</strong> github.com/Shiv1799</p>
   </div>
 </section>
 
 <footer>
   © 2025 Om Tiwari · GitHub Pages
 </footer>
-
-<script>
-const projects=[
- {title:"Erasmus Industrial Challenge – OV2SLAM",category:"robotics",link:"https://github.com/Shiv1799/Erasmus_industrial_challenge_Ov2slam",desc:"Robust visual SLAM system.",tags:["SLAM","Robotics"]},
- {title:"Self-Driving Car (Bachelor Project)",category:"robotics",link:"https://github.com/Shiv1799/self_driving_car",desc:"End-to-end autonomous driving pipeline.",tags:["Autonomous Driving"]},
- {title:"AI Meeting Assistant",category:"genai",link:"https://github.com/Shiv1799/AI-Meeting-Assistant",desc:"LLM-powered meeting intelligence.",tags:["LLMs","NLP"]},
- {title:"Quantization in PyTorch",category:"genai",link:"https://github.com/Shiv1799/Quantization_pytorch",desc:"Model compression & optimization.",tags:["PyTorch"]},
- {title:"Fashion Style Analyzer",category:"vision",link:"https://github.com/Shiv1799/Fashion-Style-Analyzer",desc:"Multimodal fashion analysis.",tags:["VLM","RAG"]}
-];
-
-const container=document.getElementById("projects-container");
-const title=document.getElementById("category-title");
-
-function setCategory(cat,btn){
- document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
- btn.classList.add("active");
- title.textContent=cat==="robotics"?"Robotics Projects":cat==="genai"?"Generative AI Projects":"Computer Vision Projects";
- render(cat);
-}
-
-function render(cat){
- container.innerHTML="";
- projects.filter(p=>p.category===cat).forEach(p=>{
-  const card=document.createElement("a");
-  card.href=p.link; card.target="_blank"; card.className="card";
-  card.innerHTML=`<h3>${p.title}</h3><p>${p.desc}</p>${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}`;
-  container.appendChild(card);
- });
-}
-render("robotics");
-</script>
 
 </body>
 </html>
