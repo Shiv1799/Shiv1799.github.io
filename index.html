@@ -6,7 +6,6 @@
 
   <title>Om Tiwari | Robotics & AI Engineer</title>
   <meta name="description" content="Om Tiwari – Robotics, Autonomous Systems, Computer Vision and Generative AI Engineer." />
-
   <base href="/" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -32,8 +31,7 @@
       line-height: 1.7;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a { color: inherit; text-decoration: none; }
 
     /* NAV */
     nav {
@@ -51,11 +49,12 @@
     }
 
     nav strong { font-size: 1.1rem; }
-    nav a { margin-left: 20px; font-size: 0.9rem; }
+    nav a { margin-left: 20px; font-size: 0.9rem; color: var(--muted); }
+    nav a:hover { color: var(--accent); }
 
     /* HERO */
     header {
-      padding: 150px 10% 120px;
+      padding: 150px 10% 100px;
       background: radial-gradient(circle at top, #111827, #0b0e14 70%);
     }
 
@@ -70,10 +69,25 @@
       max-width: 900px;
     }
 
-    section { padding: 100px 10%; }
+    /* SECTIONS */
+    section {
+      padding: 70px 10%;
+      border-top: 1px solid #1f2937;
+    }
+
+    section:first-of-type {
+      border-top: none;
+      padding-top: 90px;
+    }
+
+    section > * {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     h2 { font-size: 2.5rem; margin-bottom: 30px; }
-    h3 { color: var(--accent2); margin-bottom: 20px; }
+    h3 { color: var(--accent2); margin-bottom: 16px; }
 
     /* ABOUT */
     .about-grid {
@@ -83,29 +97,54 @@
       align-items: start;
     }
 
-    /* ✅ THIS WAS MISSING BEFORE */
     .profile-photo {
       width: 260px;
       height: 320px;
       object-fit: cover;
       border-radius: 140px;
       border: 1px solid #1f2937;
-      display: block;
       background: #111827;
     }
 
-    /* CONTACT */
-    .contact {
+    /* GRID + CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      animation: fadeUp 0.4s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
       background: var(--card);
-      border: 1px solid #1f2937;
       border-radius: 16px;
-      padding: 28px;
-      max-width: 900px;
+      border: 1px solid #1f2937;
+      padding: 22px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.45);
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 6px 6px 0 0;
+      padding: 5px 12px;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: #1f2937;
+      color: var(--muted);
     }
 
     /* FILTERS */
     .filters {
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
 
     .filters button {
@@ -124,42 +163,20 @@
       color: #0b0e14;
     }
 
-    /* PROJECT GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-    }
-
-    .card {
+    /* CONTACT */
+    .contact {
       background: var(--card);
-      border-radius: 16px;
       border: 1px solid #1f2937;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-    }
-
-    .card-content { padding: 22px; }
-
-    .tag {
-      display: inline-block;
-      margin: 6px 6px 0 0;
-      padding: 5px 12px;
-      font-size: 0.75rem;
-      border-radius: 999px;
-      background: #1f2937;
-      color: var(--muted);
+      border-radius: 16px;
+      padding: 28px;
+      max-width: 700px;
     }
 
     footer {
-      padding: 60px 10%;
-      border-top: 1px solid #1f2937;
+      padding: 50px 10%;
       text-align: center;
       color: var(--muted);
+      border-top: 1px solid #1f2937;
     }
   </style>
 </head>
@@ -170,75 +187,53 @@
   <strong>Om Tiwari</strong>
   <div>
     <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
+    <a href="#publications">Academic</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <header>
   <h1>Robotics & AI Engineer</h1>
   <p>
-    Robotics, autonomous systems, and multimodal AI engineer with hands-on experience in
-    real-time perception, navigation, and autonomy for intelligent robots and autonomous vehicles.
+    Designing real-time perception, autonomy, and multimodal AI systems for intelligent robots
+    and autonomous vehicles.
   </p>
 </header>
 
 <!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-
   <div class="about-grid">
-    <img
-      src="assets/om_pic.jpg"
-      alt="Om Tiwari"
-      class="profile-photo"
-    />
-
+    <img src="assets/om_pic.jpg" alt="Om Tiwari" class="profile-photo" />
     <div>
       <p>
         👋 I’m a <strong>Robotics & Perception Software Engineer</strong> with a Master’s in Computer
-        Science (Intelligent Systems & Robotics), and hands-on experience building
-        <strong>real-time, machine-learning–driven perception, navigation, and autonomy software</strong>
-        for intelligent robots and autonomous vehicles.
+        Science (Intelligent Systems & Robotics), experienced in building
+        <strong>real-time, ML-driven perception, navigation, and autonomy software</strong>.
       </p>
-
       <p>
-        I specialize in engineering <strong>scalable robotics systems</strong> that combine
-        <strong>ROS/ROS2 middleware</strong>, <strong>3D perception (LiDAR & stereo vision)</strong>,
-        <strong>sensor fusion</strong>, and <strong>deep learning</strong> into
-        <strong>production-ready pipelines</strong>. I’ve architected and optimized perception
-        modules and navigation stacks delivering measurable improvements in accuracy,
+        I engineer <strong>scalable robotics systems</strong> using ROS/ROS2, LiDAR & stereo vision,
+        sensor fusion, and deep learning—delivering measurable improvements in accuracy,
         latency, and robustness across simulated and physical platforms.
       </p>
-
       <p>
-        I’m also exploring <strong>Generative AI, Multimodal Models, and Large Language Models (LLMs)</strong>
-        to bring <strong>context-aware, adaptive intelligence</strong> to perception and
-        human–robot interaction workflows.
+        I also explore <strong>Generative AI and Multimodal Models</strong> to enable context-aware,
+        adaptive intelligence for perception and human–robot interaction.
       </p>
-
-      <h3>Core Competencies</h3>
-      <ul>
-        <li><strong>Robotics Software:</strong> ROS/ROS2, C++, Python · Autonomous Navigation & Control · Sensor Fusion · 3D Perception</li>
-        <li><strong>Machine Learning & Computer Vision:</strong> PyTorch, CNNs, detection & segmentation</li>
-        <li><strong>Simulation & Systems:</strong> CARLA, Docker, Linux, real-time systems</li>
-        <li><strong>Generative AI & Multimodal Intelligence:</strong> Vision–Language Models, RAG, LLMs</li>
-        <li><strong>Prototype → Deployment:</strong> Research-grounded engineering with measurable impact</li>
-      </ul>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact">
-    <p><strong>Email:</strong> your.email@domain.com</p>
-    <p><strong>Location:</strong> Germany</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/Shiv1799" target="_blank">github.com/Shiv1799</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/om-tiwari-b1687314b" target="_blank">View Profile ↗</a></p>
-    <p><strong>CV:</strong> <a href="assets/pdf/Om_Tiwari_CV.pdf" target="_blank">Download PDF ↗</a></p>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Core Skills</h2>
+  <div class="grid">
+    <div class="card"><h3>Robotics & Autonomy</h3><p>ROS/ROS2, C++, Python, Navigation, Control, Sensor Fusion</p></div>
+    <div class="card"><h3>Perception & Vision</h3><p>LiDAR, Stereo Vision, 3D Perception, Detection & Segmentation</p></div>
+    <div class="card"><h3>AI & Machine Learning</h3><p>PyTorch, CNNs, Vision–Language Models, RAG, LLMs</p></div>
+    <div class="card"><h3>Simulation & Systems</h3><p>CARLA, Docker, Linux, Real-time Systems</p></div>
   </div>
 </section>
 
@@ -256,21 +251,24 @@
   <div id="projects-container" class="grid"></div>
 </section>
 
-<!-- PUBLICATIONS -->
+<!-- ACADEMIC -->
 <section id="publications">
   <h2>Thesis & Academic Work</h2>
   <ul>
-    <li>
-      <a href="https://github.com/Shiv1799/Master-Thesis-Is-Pseudo-LiDAR-better-than-LiDAR-" target="_blank">
-        Master Thesis – Is Pseudo-LiDAR Better Than LiDAR? ↗
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/Shiv1799/Safety-Critical-Multi-Modal-Object-Detection-in-Autonomous-System" target="_blank">
-        Seminar – Safety-Critical Multi-Modal Object Detection ↗
-      </a>
-    </li>
+    <li><a href="https://github.com/Shiv1799/Master-Thesis-Is-Pseudo-LiDAR-better-than-LiDAR-" target="_blank">Master Thesis – Is Pseudo-LiDAR Better Than LiDAR? ↗</a></li>
+    <li><a href="https://github.com/Shiv1799/Safety-Critical-Multi-Modal-Object-Detection-in-Autonomous-System" target="_blank">Seminar – Safety-Critical Multi-Modal Object Detection ↗</a></li>
   </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p><strong>Email:</strong> your.email@domain.com</p>
+    <p><strong>Location:</strong> Germany</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/Shiv1799" target="_blank">github.com/Shiv1799</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">LinkedIn Profile ↗</a></p>
+  </div>
 </section>
 
 <footer>
@@ -279,41 +277,11 @@
 
 <script>
 const projects = [
-  {
-    title: "Erasmus Industrial Challenge – OV2SLAM",
-    category: "robotics",
-    link: "https://github.com/Shiv1799/Erasmus_industrial_challenge_Ov2slam",
-    desc: "Visual SLAM system focusing on robustness under real-world constraints.",
-    tags: ["SLAM", "Robotics"]
-  },
-  {
-    title: "Self-Driving Car (Bachelor Project)",
-    category: "robotics",
-    link: "https://github.com/Shiv1799/self_driving_car",
-    desc: "End-to-end autonomous driving pipeline with perception and control.",
-    tags: ["Autonomous Driving", "Computer Vision"]
-  },
-  {
-    title: "AI Meeting Assistant",
-    category: "genai",
-    link: "https://github.com/Shiv1799/AI-Meeting-Assistant",
-    desc: "LLM-based system for transcription and structured meeting summaries.",
-    tags: ["LLMs", "NLP"]
-  },
-  {
-    title: "Model Quantization in PyTorch",
-    category: "genai",
-    link: "https://github.com/Shiv1799/Quantization_pytorch",
-    desc: "Quantization techniques for efficient deep learning inference.",
-    tags: ["PyTorch", "Optimization"]
-  },
-  {
-    title: "Fashion Style Analyzer",
-    category: "vision",
-    link: "https://github.com/Shiv1799/Fashion-Style-Analyzer",
-    desc: "Multimodal vision-language fashion analysis using embeddings and RAG.",
-    tags: ["VLM", "RAG"]
-  }
+  { title:"Erasmus Industrial Challenge – OV2SLAM", category:"robotics", link:"https://github.com/Shiv1799/Erasmus_industrial_challenge_Ov2slam", desc:"Robust visual SLAM system.", tags:["SLAM","Robotics"] },
+  { title:"Self-Driving Car (Bachelor Project)", category:"robotics", link:"https://github.com/Shiv1799/self_driving_car", desc:"End-to-end autonomous driving pipeline.", tags:["Autonomous Driving"] },
+  { title:"AI Meeting Assistant", category:"genai", link:"https://github.com/Shiv1799/AI-Meeting-Assistant", desc:"LLM-powered meeting intelligence.", tags:["LLMs","NLP"] },
+  { title:"Quantization in PyTorch", category:"genai", link:"https://github.com/Shiv1799/Quantization_pytorch", desc:"Model compression & optimization.", tags:["PyTorch"] },
+  { title:"Fashion Style Analyzer", category:"vision", link:"https://github.com/Shiv1799/Fashion-Style-Analyzer", desc:"Multimodal fashion analysis.", tags:["VLM","RAG"] }
 ];
 
 const container = document.getElementById("projects-container");
@@ -322,29 +290,21 @@ const title = document.getElementById("category-title");
 function setCategory(cat, btn) {
   document.querySelectorAll(".filters button").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
-
-  title.textContent =
-    cat === "robotics" ? "Robotics Projects" :
-    cat === "genai" ? "Generative AI Projects" :
-    "Computer Vision Projects";
-
+  title.textContent = cat === "robotics" ? "Robotics Projects" : cat === "genai" ? "Generative AI Projects" : "Computer Vision Projects";
   render(cat);
 }
 
 function render(cat) {
   container.innerHTML = "";
   projects.filter(p => p.category === cat).forEach(p => {
-    const card = document.createElement("div");
+    const card = document.createElement("a");
+    card.href = p.link;
+    card.target = "_blank";
     card.className = "card";
     card.innerHTML = `
-      <div class="card-content">
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
-        ${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}
-        <div style="margin-top:14px;">
-          <a href="${p.link}" target="_blank">View Project ↗</a>
-        </div>
-      </div>
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+      ${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}
     `;
     container.appendChild(card);
   });
