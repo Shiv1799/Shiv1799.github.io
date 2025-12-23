@@ -114,7 +114,7 @@
       margin: 0 0 4px 0;
     }
 
-    /* FILTERS (Shared Style) */
+    /* FILTERS */
     .filters {
       display: flex;
       justify-content: center;
@@ -194,7 +194,8 @@
       flex-grow: 1;
     }
 
-    .tech-stack {
+    /* Bottom Tags (Tech Stack / Degree type) */
+    .bottom-tag {
       margin-top: auto;
       padding-top: 16px;
       border-top: 1px solid #374151;
@@ -239,15 +240,6 @@
     .btn-primary:hover { background: #90b4ff; text-decoration: none; }
     .btn-outline { border: 1px solid #374151; color: var(--text); }
     .btn-outline:hover { border-color: var(--accent); color: #fff; text-decoration: none; }
-
-    /* TIMELINE (Education Only) */
-    .timeline-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
 
     /* FOOTER */
     footer {
@@ -349,66 +341,46 @@
     
     <div class="card exp-card" data-category="industry">
       <img src="assets/exp_hitachi.jpg" alt="Hitachi Astemo" class="card-img">
-      
       <h3>Master Thesis (AD)</h3>
       <div class="card-meta">
         <span>Hitachi Astemo</span>
         <span>Jan 2025 – Present</span>
       </div>
-      
       <p>Integrated a ROS2 3D object detection pipeline with 4 cameras and 2 LiDARs. Resolved stereo vision synchronization issues, improving accuracy by 15% and reducing false positives by 30% via SiL testing in CARLA.</p>
-      
-      <div class="tech-stack">
-        🛠 ROS2 • Docker • CARLA • LiDAR
-      </div>
+      <div class="bottom-tag">🛠 ROS2 • Docker • CARLA • LiDAR</div>
     </div>
 
     <div class="card exp-card" data-category="industry">
       <img src="assets/exp_bosch.jpg" alt="BOSCH" class="card-img">
-      
       <h3>Intern (Robotics & ML)</h3>
       <div class="card-meta">
         <span>BOSCH</span>
         <span>Jan 2024 – Jun 2024</span>
       </div>
-      
       <p>Led ML integration for Franka Panda robot cloth folding. Used MoveIt and FlexBE for motion planning and Reinforcement Learning to refine manipulation, improving efficiency by ~20%.</p>
-      
-      <div class="tech-stack">
-        🛠 MoveIt • FlexBE • RL • Python
-      </div>
+      <div class="bottom-tag">🛠 MoveIt • FlexBE • RL • Python</div>
     </div>
 
     <div class="card exp-card" data-category="research">
       <img src="assets/exp_dfki.jpg" alt="DFKI" class="card-img">
-      
       <h3>Research Assistant</h3>
       <div class="card-meta">
         <span>DFKI</span>
         <span>Jun 2021 – Jun 2023</span>
       </div>
-      
       <p>Boosted YOLOv4 detection mAP from 90.5% to 95.6% using synthetic datasets (NVIDIA NDDS). Implemented ROS task navigation and MQTT communication for real-time messaging.</p>
-      
-      <div class="tech-stack">
-        🛠 YOLOv4 • NVIDIA NDDS • MQTT
-      </div>
+      <div class="bottom-tag">🛠 YOLOv4 • NVIDIA NDDS • MQTT</div>
     </div>
 
     <div class="card exp-card" data-category="research">
       <img src="assets/exp_karat.jpg" alt="Formula E Team" class="card-img">
-      
       <h3>Intern (Auto. Nav)</h3>
       <div class="card-meta">
         <span>KaRaT Racing Team</span>
         <span>Nov 2021 – Nov 2022</span>
       </div>
-      
       <p>Integrated Tiny YOLO and PointNet into a ROS perception stack on Nvidia Jetson. Implemented visual SLAM using GNSS and stereo vision for autonomous racing scenarios.</p>
-      
-      <div class="tech-stack">
-        🛠 Nvidia Jetson • SLAM • PointNet
-      </div>
+      <div class="bottom-tag">🛠 Nvidia Jetson • SLAM • PointNet</div>
     </div>
 
   </div>
@@ -434,7 +406,7 @@
         <span>ROS2 Safety</span>
       </div>
       <p>Built ROS2 behavior modules with failsafe logic for real-time obstacle detection. Integrated AES256-CBC encryption for secure data communication.</p>
-      <div class="tech-stack">🛠 ROS2 • C++ • Gazebo</div>
+      <div class="bottom-tag">🛠 ROS2 • C++ • Gazebo</div>
     </div>
 
     <div class="card project-card" data-category="robotics">
@@ -445,7 +417,7 @@
         <span>SLAM</span>
       </div>
       <p>Ported OV2SLAM to ROS2, improving processing speed by 30%. Benchmarked on KITTI datasets with 0.5% average error.</p>
-      <div class="tech-stack">🛠 OV2SLAM • ROS2 • Optimization</div>
+      <div class="bottom-tag">🛠 OV2SLAM • ROS2 • Optimization</div>
     </div>
 
     <div class="card project-card" data-category="robotics">
@@ -456,7 +428,7 @@
         <span>Embedded</span>
       </div>
       <p>Automated weed detection system using CNNs deployed on embedded hardware. Published in IEEE International Conference on IoT.</p>
-      <div class="tech-stack">🛠 CNN • Raspberry Pi • OpenCV</div>
+      <div class="bottom-tag">🛠 CNN • Raspberry Pi • OpenCV</div>
     </div>
 
     <div class="card project-card" data-category="gen-ai">
@@ -467,7 +439,7 @@
         <span>Generative Depth</span>
       </div>
       <p>Generative AI approach converting 2D stereo images into 3D point clouds. Used deep learning to generate high-fidelity 3D environments.</p>
-      <div class="tech-stack">🛠 PyTorch • Generative Models</div>
+      <div class="bottom-tag">🛠 PyTorch • Generative Models</div>
     </div>
 
     <div class="card project-card" data-category="upcoming">
@@ -478,7 +450,7 @@
         <span>Sim2Real</span>
       </div>
       <p>Developing a reinforcement learning framework for humanoid robot navigation using Large Language Models for task planning.</p>
-      <div class="tech-stack">🛠 LLMs • Reinforcement Learning</div>
+      <div class="bottom-tag">🛠 LLMs • Reinforcement Learning</div>
     </div>
 
   </div>
@@ -486,32 +458,59 @@
 
 <section id="education">
   <h2>Education</h2>
-  <div class="timeline"> <div class="timeline-item">
-      <h3>Master of Science — Computer Science</h3>
-      <p style="color:var(--accent2); font-size:0.9rem;">Oct 2021 – Present</p>
-      <p style="color:var(--muted);">Technische Universität Kaiserslautern (RPTU), Germany</p>
+  <div class="grid">
+    
+    <div class="card">
+      <img src="assets/edu_rptu.jpg" alt="RPTU" class="card-img">
+      <h3>M.Sc. Computer Science</h3>
+      <div class="card-meta">
+        <span>RPTU, Germany</span>
+        <span>Oct 2021 – Present</span>
+      </div>
+      <p>Specialization in Intelligent Systems and Robotics. <br>Thesis: Autonomous Driving Perception at Hitachi Astemo.</p>
+      <div class="bottom-tag">🎓 Master of Science</div>
     </div>
-    <div class="timeline-item">
-      <h3>Bachelor of Technology — Computer Science</h3>
-      <p style="color:var(--accent2); font-size:0.9rem;">Aug 2016 – Sep 2020</p>
-      <p style="color:var(--muted);">Krishna Engineering College, New Delhi, India</p>
+
+    <div class="card">
+      <img src="assets/edu_krishna.jpg" alt="Krishna Engineering College" class="card-img">
+      <h3>B.Tech. Computer Science</h3>
+      <div class="card-meta">
+        <span>KEC, India</span>
+        <span>Aug 2016 – Sep 2020</span>
+      </div>
+      <p>Foundation in Algorithms, Data Structures, and Embedded Systems. <br>Graduated with First Division.</p>
+      <div class="bottom-tag">🎓 Bachelor of Technology</div>
     </div>
+
   </div>
 </section>
 
 <section id="publications">
   <h2>Publications</h2>
-  <div class="timeline-item">
-    <ul style="list-style: none; padding-left: 0;">
-      <li style="margin-bottom: 20px;">
-        <strong style="color:#fff;">An Experimental Setup for Utilizing CNN in Automated Weed Detection</strong><br/>
-        <span style="color:var(--muted); font-size:0.9rem;">4th IEEE International Conference on Internet of Things (ISBN: 978-1-7281-1253-4)</span>
-      </li>
-      <li>
-        <strong style="color:#fff;">Intelligent Skin Cancer Detection Mobile Application Using CNN</strong><br/>
-        <span style="color:var(--muted); font-size:0.9rem;">Journal of Advanced Research in Dynamical and Control Systems (Vol 11, Issue 07)</span>
-      </li>
-    </ul>
+  <div class="grid">
+    
+    <div class="card">
+      <img src="assets/pub_weed.jpg" alt="Weed Detection Paper" class="card-img">
+      <h3 style="font-size:1.1rem;">Automated Weed Detection using CNN</h3>
+      <div class="card-meta">
+        <span>IEEE IoT Conference</span>
+        <span>ISBN: 978-1-7281-1253-4</span>
+      </div>
+      <p>Proposed an experimental setup for utilizing Convolutional Neural Networks to detect weeds in agricultural crops with high precision.</p>
+      <div class="bottom-tag">📄 Conference Paper</div>
+    </div>
+
+    <div class="card">
+      <img src="assets/pub_skin.jpg" alt="Skin Cancer Paper" class="card-img">
+      <h3 style="font-size:1.1rem;">Skin Cancer Detection App</h3>
+      <div class="card-meta">
+        <span>JARDCS (Vol 11, Issue 07)</span>
+        <span>Pages 253-259</span>
+      </div>
+      <p>Developed an intelligent mobile application using deep learning models to classify skin lesions and detect early signs of cancer.</p>
+      <div class="bottom-tag">📄 Journal Article</div>
+    </div>
+
   </div>
 </section>
 
@@ -536,15 +535,12 @@
 
   // Generic Filter Logic
   function updateFilters(btnClass, cardClass, category) {
-    // 1. Update Buttons
     const buttons = document.querySelectorAll('.' + btnClass);
     buttons.forEach(btn => btn.classList.remove('active'));
     
-    // Find clicked button
     const activeBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(category));
     if (activeBtn) activeBtn.classList.add('active');
 
-    // 2. Show/Hide Cards
     const cards = document.querySelectorAll('.' + cardClass);
     cards.forEach(card => {
       const cardCategory = card.getAttribute('data-category');
