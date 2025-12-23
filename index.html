@@ -58,7 +58,7 @@
 
     /* HERO */
     header {
-      padding:160px 10% 110px;
+      padding:160px 10% 100px;
       background:radial-gradient(circle at top,#111827,#0b0e14 70%);
     }
 
@@ -87,6 +87,15 @@
 
     h2 { font-size:2.6rem; margin-bottom:32px; }
     h3 { color:var(--accent2); margin-bottom:12px; }
+
+    /* SUMMARY */
+    .summary {
+      background:var(--card);
+      border:1px solid #1f2937;
+      border-radius:16px;
+      padding:28px;
+      font-size:1.05rem;
+    }
 
     /* ABOUT */
     .about-grid {
@@ -204,11 +213,11 @@
 <nav>
   <div class="nav-name">Om Tiwari</div>
   <div>
+    <a href="#summary">Summary</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#publications">Academic</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -220,6 +229,22 @@
     intelligent robots and autonomous vehicles.
   </p>
 </header>
+
+<!-- SUMMARY -->
+<section id="summary">
+  <h2>Professional Summary</h2>
+  <div class="summary">
+    Computer Science graduate with over <strong>2+ years of applied experience</strong> in
+    robotics, computer vision, and autonomous systems. Built and deployed
+    <strong>ROS2 pipelines</strong> for SLAM, object detection, and sensor fusion using
+    <strong>LiDAR, stereo vision, and deep learning</strong>.
+    Applied simulation tools and embedded platforms (NVIDIA Jetson, Raspberry Pi)
+    in academic, research, and industry environments, and implemented ML models
+    using <strong>PyTorch and TensorFlow</strong>.
+    Achieved measurable improvements, including <strong>up to 30% reduction in false positives</strong>
+    across simulation and real-world evaluations.
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
@@ -251,8 +276,9 @@
   <div class="grid">
     <div class="card"><h3>Robotics & Autonomy</h3><p>ROS/ROS2, C++, Python, Navigation, Control, Sensor Fusion</p></div>
     <div class="card"><h3>Perception & Vision</h3><p>LiDAR, Stereo Vision, 3D Perception, Detection & Segmentation</p></div>
-    <div class="card"><h3>AI & Machine Learning</h3><p>PyTorch, CNNs, Vision–Language Models, RAG, LLMs</p></div>
-    <div class="card"><h3>Simulation & Systems</h3><p>CARLA, Docker, Linux, Real-time Systems</p></div>
+    <div class="card"><h3>AI & Machine Learning</h3><p>PyTorch, TensorFlow, CNNs, Vision–Language Models, RAG, LLMs</p></div>
+    <div class="card"><h3>Simulation & Systems</h3><p>CARLA, Docker, Linux, NVIDIA Jetson, Raspberry Pi</p></div>
+    <div class="card"><h3>Languages</h3><p>English (C1 – IELTS) · German (B2 – progressing, C1 willingness)</p></div>
   </div>
 </section>
 
@@ -260,17 +286,15 @@
 <section id="experience">
   <h2>Work Experience</h2>
   <div class="timeline">
-
     <div class="timeline-item">
       <div class="timeline-header">
         <h3>Hitachi Astemo — Master Thesis (Autonomous Driving)</h3>
         <span>Jan 2025 – Aug 2025 · Munich, Germany</span>
       </div>
       <ul>
-        <li>Integrated ROS2-based 3D object detection using multi-camera and LiDAR sensors.</li>
-        <li>Developed an end-to-end pseudo-LiDAR system using stereo vision in Docker.</li>
-        <li>Conducted SiL testing with CARLA under diverse environmental conditions.</li>
-        <li>Reduced false positives by ~30% through parameter tuning and evaluation.</li>
+        <li>Developed an end-to-end pseudo-LiDAR system using stereo vision in ROS2.</li>
+        <li>Conducted SiL testing in CARLA under varied environmental conditions.</li>
+        <li>Reduced false positives by ~30% via evaluation and tuning.</li>
       </ul>
     </div>
 
@@ -280,81 +304,33 @@
         <span>Jan 2024 – Jun 2024 · Renningen, Germany</span>
       </div>
       <ul>
-        <li>Integrated ML-based pipelines into a Franka Panda cloth-folding robot.</li>
-        <li>Designed collision-free motion planning using MoveIt and FlexBE.</li>
-        <li>Refined manipulation using MuJoCo and Stable-Baselines3.</li>
+        <li>Integrated ML pipelines into a Franka Panda manipulation system.</li>
+        <li>Implemented motion planning using MoveIt and FlexBE.</li>
       </ul>
     </div>
-
-    <div class="timeline-item">
-      <div class="timeline-header">
-        <h3>Kaiserslautern Racing Team — Autonomous Navigation Intern</h3>
-        <span>Nov 2021 – Nov 2022 · Kaiserslautern, Germany</span>
-      </div>
-      <ul>
-        <li>Integrated Tiny YOLO, SFA3D, and PointNet on NVIDIA Jetson using ROS.</li>
-        <li>Improved detection and depth prediction accuracy by up to 10%.</li>
-        <li>Implemented visual SLAM using GNSS, IMU, LiDAR, and stereo vision.</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-header">
-        <h3>Fraunhofer ITWM — Research Assistant</h3>
-        <span>Jan 2022 – Sep 2023 · Kaiserslautern, Germany</span>
-      </div>
-      <ul>
-        <li>Implemented PointNet++ and YOLOv4 for urban scene understanding.</li>
-        <li>Improved inference speed by ~15% using C++ DarkHelp integration.</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-header">
-        <h3>DFKI — Research Assistant</h3>
-        <span>Jun 2021 – Jun 2023 · Kaiserslautern, Germany</span>
-      </div>
-      <ul>
-        <li>Generated synthetic data using NVIDIA NDDS and Unreal Engine.</li>
-        <li>Improved object detection accuracy from 90.5% to 95.6% mAP.</li>
-        <li>Integrated ROS navigation and MQTT-based communication.</li>
-      </ul>
-    </div>
-
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
-
   <div class="filters">
     <button class="active" onclick="setCategory('robotics',this)">Robotics</button>
     <button onclick="setCategory('genai',this)">Generative AI</button>
     <button onclick="setCategory('vision',this)">Computer Vision</button>
   </div>
-
   <h3 id="category-title">Robotics Projects</h3>
   <div id="projects-container" class="grid"></div>
 </section>
 
-<!-- ACADEMIC -->
-<section id="publications">
-  <h2>Thesis & Academic Work</h2>
-  <ul>
-    <li><a href="https://github.com/Shiv1799/Master-Thesis-Is-Pseudo-LiDAR-better-than-LiDAR-" target="_blank">Master Thesis – Is Pseudo-LiDAR Better Than LiDAR? ↗</a></li>
-    <li><a href="https://github.com/Shiv1799/Safety-Critical-Multi-Modal-Object-Detection-in-Autonomous-System" target="_blank">Seminar – Safety-Critical Multi-Modal Object Detection ↗</a></li>
-  </ul>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
+  <h2>Contact & Availability</h2>
   <div class="contact">
     <p><strong>Email:</strong> tiwari@rptu.de</p>
     <p><strong>Location:</strong> Germany</p>
+    <p><strong>Working & Living:</strong> Currently working and living in Germany</p>
     <p><strong>GitHub:</strong> <a href="https://github.com/Shiv1799" target="_blank">github.com/Shiv1799</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">LinkedIn Profile ↗</a></p>
   </div>
 </section>
 
