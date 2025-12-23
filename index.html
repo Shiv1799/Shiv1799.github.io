@@ -11,175 +11,250 @@
 
   <style>
     :root {
-      --bg:#0b0e14; --card:#111827; --text:#e6e6eb;
-      --muted:#9ca3af; --accent:#7aa2f7; --accent2:#9ece6a;
+      --bg: #0b0e14;
+      --card: #111827;
+      --text: #e6e6eb;
+      --muted: #9ca3af;
+      --accent: #7aa2f7;  /* Soft Blue */
+      --accent2: #9ece6a; /* Soft Green for dates/highlights */
     }
 
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin:0;
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
-    a { color:var(--accent); text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { text-decoration: underline; color: #fff; }
 
     /* NAV */
     nav {
-      position:fixed;
-      top:0; width:100%;
-      background:rgba(11,14,20,0.9);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid #1f2937;
-      padding:16px 10%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      z-index:1000;
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(11, 14, 20, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1f2937;
+      padding: 16px 5%; /* Responsive padding */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
     }
 
     .nav-name {
-      font-size:1.6rem;
-      font-weight:700;
-      letter-spacing:.5px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
     }
 
     nav a {
-      margin-left:18px;
-      font-size:.9rem;
-      color:var(--muted);
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
     }
-    nav a:hover { color:var(--accent); }
+    nav a:hover { color: var(--accent); text-decoration: none; }
 
     /* HERO */
     header {
-      padding:160px 10% 110px;
-      background:radial-gradient(circle at top,#111827,#0b0e14 70%);
+      padding: 180px 10% 100px;
+      background: radial-gradient(circle at top, #1f2937 0%, #0b0e14 70%);
+      text-align: center; /* Centered for better impact */
     }
 
-    header h1 { font-size:3.8rem; margin-bottom:12px; }
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+      background: linear-gradient(to right, #fff, #9ca3af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
     header p {
-      font-size:1.3rem;
-      color:var(--muted);
-      max-width:900px;
+      font-size: 1.4rem;
+      color: var(--muted);
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     /* SECTIONS */
     section {
-      padding:70px 10%;
-      border-top:1px solid #1f2937;
+      padding: 80px 10%;
+      border-top: 1px solid #1f2937;
     }
     section > * {
-      max-width:1200px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    section:first-of-type { border-top:none; }
-
-    h2 { font-size:2.6rem; margin-bottom:32px; }
-    h3 { color:var(--accent2); margin-bottom:8px; }
-
-    /* SUMMARY */
-    .summary {
-      background:var(--card);
-      border:1px solid #1f2937;
-      border-radius:16px;
-      padding:28px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* ABOUT */
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #fff;
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin: 0 0 8px 0;
+    }
+
+    /* ABOUT GRID */
     .about-grid {
-      display:grid;
-      grid-template-columns:260px 1fr;
-      gap:48px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 50px;
+      align-items: start;
     }
 
     .profile-photo {
-      width:260px; height:320px;
-      object-fit:cover;
-      border-radius:140px;
-      border:1px solid #1f2937;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1.1;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid #374151;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
-    /* GRID + CARD */
+    .summary-text {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .cta-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0b0e14;
+    }
+    .btn-primary:hover {
+      background: #90b4ff;
+      text-decoration: none;
+    }
+    .btn-outline {
+      border: 1px solid #374151;
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* GRID LAYOUTS (Skills & Projects) */
     .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
 
     .card {
-      background:var(--card);
-      border:1px solid #1f2937;
-      border-radius:16px;
-      padding:22px;
-      transition:transform .25s ease, box-shadow .25s ease;
+      background: var(--card);
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      height: 100%;
     }
 
     .card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 16px 36px rgba(0,0,0,.45);
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
-    /* TIMELINE */
+    .card h3 { color: var(--accent); font-size: 1.2rem; }
+    .card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 0; }
+
+    /* TIMELINE (Experience & Education) */
     .timeline {
-      display:flex;
-      flex-direction:column;
-      gap:36px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
     .timeline-item {
-      background:var(--card);
-      border:1px solid #1f2937;
-      border-radius:16px;
-      padding:26px;
+      background: var(--card);
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 28px;
+      position: relative;
     }
 
-    .timeline-header span {
-      font-size:.85rem;
-      color:var(--muted);
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      align-items: baseline;
+    }
+
+    .timeline-date {
+      color: var(--accent2);
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+
+    .timeline-location {
+      font-size: 0.85rem;
+      color: #6b7280;
+      display: block;
+      margin-top: 4px;
     }
 
     .timeline-item ul {
-      padding-left:18px;
-      margin-top:12px;
+      padding-left: 20px;
+      margin: 0;
+      color: var(--muted);
+    }
+    .timeline-item li {
+      margin-bottom: 8px;
     }
 
-    /* PROJECT FILTER */
-    .filters { margin-bottom:24px; }
-    .filters button {
-      margin-right:12px;
-      padding:8px 18px;
-      border-radius:20px;
-      border:1px solid var(--accent);
-      background:none;
-      color:var(--accent);
-      cursor:pointer;
-    }
-    .filters button.active {
-      background:var(--accent);
-      color:#0b0e14;
-    }
-
-    /* CONTACT */
-    .contact {
-      background:var(--card);
-      border:1px solid #1f2937;
-      border-radius:16px;
-      padding:28px;
-      max-width:700px;
-    }
-
+    /* FOOTER */
     footer {
-      padding:50px 10%;
-      text-align:center;
-      color:var(--muted);
-      border-top:1px solid #1f2937;
+      padding: 60px 10%;
+      text-align: center;
+      color: #4b5563;
+      border-top: 1px solid #1f2937;
+      font-size: 0.9rem;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .about-grid { grid-template-columns: 1fr; text-align: center; }
+      .profile-photo { width: 200px; margin: 0 auto; }
+      .cta-buttons { justify-content: center; }
+      nav { flex-direction: column; gap: 10px; padding: 12px; }
+      .timeline-header { flex-direction: column; gap: 4px; }
     }
   </style>
 </head>
@@ -188,15 +263,12 @@
 
 <nav>
   <div class="nav-name">Om Tiwari</div>
-  <div>
-    <a href="#summary">Summary</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#publications">Publications</a>
-    <a href="#seminar">Seminar</a>
     <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#publications">Publications</a>
   </div>
 </nav>
 
@@ -205,92 +277,184 @@
   <p>Designing real-time perception, autonomy, and multimodal AI systems for intelligent robots.</p>
 </header>
 
-<!-- SUMMARY -->
-<section id="summary">
-  <h2>Professional Summary</h2>
-  <div class="summary">
-    Computer Science graduate with over <strong>2+ years of applied experience</strong> in robotics,
-    computer vision, and autonomous systems. Built and deployed <strong>ROS2 pipelines</strong> for
-    SLAM, object detection, and sensor fusion using <strong>LiDAR, stereo vision, and deep learning</strong>.
-    Improved detection accuracy and reduced false positives by up to <strong>30%</strong> in simulation
-    and real-world tests using PyTorch and TensorFlow.
+<section id="about">
+  <div class="about-grid">
+    <img src="assets/om_pic.jpg" alt="Om Tiwari" class="profile-photo" />
+    
+    <div class="summary-text">
+      <h2 style="margin-top:0; border:none; padding:0; margin-bottom:20px;">Professional Summary</h2>
+      <p>
+        Computer Science graduate with over <strong>2+ years of applied experience</strong> in robotics,
+        [cite_start]computer vision, and autonomous systems[cite: 5]. I specialize in building and deploying <strong>ROS2 pipelines</strong> for
+        [cite_start]SLAM, object detection, and sensor fusion using LiDAR, stereo vision, and deep learning[cite: 6].
+      </p>
+      <p>
+        My work involves applying simulation tools (Gazebo, CARLA) and embedded platforms like <strong>Nvidia Jetson</strong> 
+        to solve real-world problems. I have improved detection accuracy and reduced false positives by up to 30% 
+        [cite_start]in both simulation and physical testing[cite: 8].
+      </p>
+
+      <div class="cta-buttons">
+        <a href="assets/Om_Tiwari_Resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
+        <a href="https://www.linkedin.com/in/om-tiwari" class="btn btn-outline" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Shiv1799" class="btn btn-outline" target="_blank">GitHub</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Languages</h3>
+      [cite_start]<p>Python, C/C++, Java, SQL, Bash Scripting [cite: 10]</p>
+    </div>
+    <div class="card">
+      <h3>Robotics & Middleware</h3>
+      [cite_start]<p>ROS, ROS2 (Humble/Foxy), Nav2, MoveIt, FlexBE, SLAM, Sensor Fusion, Nvidia Jetson, Raspberry Pi [cite: 11]</p>
+    </div>
+    <div class="card">
+      <h3>AI & ML Frameworks</h3>
+      [cite_start]<p>PyTorch, TensorFlow, Keras, Scikit-learn, NumPy, Pandas, OpenCV, YOLO [cite: 13]</p>
+    </div>
+    <div class="card">
+      <h3>Simulation & Tools</h3>
+      [cite_start]<p>Docker, Gazebo, MuJoCo, CARLA Simulator, Stable Baselines3, Git, Linux (Ubuntu) [cite: 14]</p>
+    </div>
+  </div>
+</section>
+
 <section id="experience">
   <h2>Work Experience</h2>
   <div class="timeline">
+    
     <div class="timeline-item">
-      <h3>Hitachi Astemo — Master Thesis (Autonomous Driving)</h3>
-      <span>Jan 2025 – Aug 2025 · Munich, Germany</span>
+      <div class="timeline-header">
+        <div>
+          <h3>Master Thesis (Autonomous Driving)</h3>
+          <span class="timeline-location">Hitachi Astemo — Munich, Germany</span>
+        </div>
+        <span class="timeline-date">Jan 2025 – Present</span>
+      </div>
       <ul>
-        <li>Developed an end-to-end pseudo-LiDAR pipeline using stereo vision in ROS2.</li>
-        <li>Performed SiL testing in CARLA under varied weather and lighting.</li>
-        <li>Reduced false positives by ~30% through evaluation and tuning.</li>
+        [cite_start]<li>Integrated a ROS2-based 3D object detection pipeline with 4 multi-camera inputs and 2 LiDAR sensors[cite: 19].</li>
+        [cite_start]<li>Built a Dockerized pseudo-LiDAR system using stereo vision, achieving LiDAR-comparable precision within ±5% deviation[cite: 22].</li>
+        [cite_start]<li>Executed over 50 SiL test runs in CARLA across varied lighting and weather conditions[cite: 21].</li>
+        <li>Resolved synchronization issues, improving detection accuracy by approx. [cite_start]15% and reducing false positives by 30%[cite: 20, 23].</li>
       </ul>
     </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <div>
+          <h3>Intern (Robotics & ML)</h3>
+          <span class="timeline-location">BOSCH — Renningen, Germany</span>
+        </div>
+        <span class="timeline-date">Jan 2024 – Jun 2024</span>
+      </div>
+      <ul>
+        [cite_start]<li>Led integration of ML models into Franka Panda robot for cloth folding, aligning perception with control logic[cite: 27].</li>
+        [cite_start]<li>Utilized MoveIt and FlexBE for collision-free motion planning; refined manipulation via reinforcement learning (Stable Baselines3)[cite: 29, 30].</li>
+        [cite_start]<li>Improved manipulation efficiency by estimated 20% by resolving impedance control issues in dynamic environments[cite: 28].</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <div>
+          <h3>Research Assistant</h3>
+          <span class="timeline-location">DFKI — Kaiserslautern, Germany</span>
+        </div>
+        <span class="timeline-date">Jun 2021 – Jun 2023</span>
+      </div>
+      <ul>
+        [cite_start]<li>Improved YOLOv4 detection accuracy from 90.5% to 95.6% mAP by utilizing synthetic datasets generated via NVIDIA NDDS[cite: 35].</li>
+        [cite_start]<li>Implemented ROS-based task navigation and MQTT communication for real-time robot-external system messaging[cite: 36].</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <div>
+          <h3>Intern (Autonomous Navigation)</h3>
+          <span class="timeline-location">Kaiserslautern Racing Team (Formula E)</span>
+        </div>
+        <span class="timeline-date">Nov 2021 – Nov 2022</span>
+      </div>
+      <ul>
+        [cite_start]<li>Integrated Tiny YOLO, SFA3D, and PointNet into a ROS perception stack on Nvidia Jetson[cite: 40].</li>
+        [cite_start]<li>Implemented visual SLAM-based localization using GNSS, LiDAR, and stereo vision for racing scenarios[cite: 41].</li>
+        [cite_start]<li>Achieved 10% performance improvement in detection/depth prediction through multi-model fusion[cite: 43].</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
-<!-- EDUCATION -->
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <div class="grid">
+    
+    <div class="card">
+      <h3>Dependable Behavior-Based Architecture</h3>
+      <p style="margin-bottom:10px;"><em>RPTU (Feb 2023 – Aug 2023)</em></p>
+      <p>Built ROS2 behavior modules with failsafe logic for real-time obstacle detection. [cite_start]Integrated AES256-CBC encryption for secure data communication and validated safety protocols on TurtleBot3 in Gazebo[cite: 46, 47, 48].</p>
+    </div>
+
+    <div class="card">
+      <h3>Augmented Reality HUD in ROS</h3>
+      <p style="margin-bottom:10px;"><em>Erasmus Mundus Challenge (May 2023 – Dec 2023)</em></p>
+      <p>Ported OV2SLAM to ROS2, improving processing speed by 30%. [cite_start]Benchmarked the system on KITTI datasets with 0.5% average error and optimized thread patterns for a 15% speedup[cite: 51, 52, 53].</p>
+    </div>
+
+    <div class="card">
+      <h3>Weed Detection Bot</h3>
+      <p style="margin-bottom:10px;"><em>IoT & Computer Vision</em></p>
+      <p>Developed an automated weed detection system using CNNs. [cite_start]Published results in IEEE International Conference on Internet of Things[cite: 61].</p>
+    </div>
+
+  </div>
+</section>
+
 <section id="education">
   <h2>Education</h2>
   <div class="timeline">
-    <div class="timeline-item">
-      <h3>Master of Science — Computer Science</h3>
-      <span>10/2021 – Present · Technische Universität Kaiserslautern (RPTU), Germany</span>
+    <div class="timeline-item" style="padding: 20px;">
+      <h3 style="font-size:1.1rem; color:var(--text);">Master of Science — Computer Science</h3>
+      <p style="color:var(--accent2); margin-top:4px;">Oct 2021 – Present</p>
+      [cite_start]<p style="font-size:0.9rem; color:var(--muted);">Technische Universität Kaiserslautern (RPTU), Germany [cite: 56]</p>
     </div>
-    <div class="timeline-item">
-      <h3>Bachelor of Technology — Computer Science</h3>
-      <span>08/2016 – 09/2020 · Krishna Engineering College, New Delhi, India</span>
+    <div class="timeline-item" style="padding: 20px;">
+      <h3 style="font-size:1.1rem; color:var(--text);">Bachelor of Technology — Computer Science</h3>
+      <p style="color:var(--accent2); margin-top:4px;">Aug 2016 – Sep 2020</p>
+      [cite_start]<p style="font-size:0.9rem; color:var(--muted);">Krishna Engineering College, New Delhi, India [cite: 57]</p>
     </div>
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
 <section id="publications">
   <h2>Publications</h2>
-  <ul>
-    <li>
-      <strong>An Experimental Setup for Utilizing CNN in Automated Weed Detection</strong><br/>
-      4th IEEE International Conference on Internet of Things: Smart Innovation and Usages<br/>
-      ISBN: 978-1-7281-1253-4
-    </li>
-    <li>
-      <strong>Intelligent Skin Cancer Detection Mobile Application Using CNN</strong><br/>
-      Journal of Advanced Research in Dynamical and Control Systems<br/>
-      Volume 11, Special Issue 07, Pages 253–259
-    </li>
-  </ul>
-</section>
-
-<!-- SEMINAR -->
-<section id="seminar">
-  <h2>Seminar</h2>
   <div class="timeline-item">
-    <h3>Safety-Critical Multi-Modal Object Detection in Autonomous Systems</h3>
-    <span>Technische Universität Kaiserslautern · Jun 2022 – Feb 2023</span>
-    <ul>
-      <li>Investigated early and late fusion techniques across LiDAR, radar, and camera data.</li>
-      <li>Reviewed and synthesized insights from 10+ peer-reviewed papers with focus on safety.</li>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 20px;">
+        <strong style="color:#fff;">An Experimental Setup for Utilizing CNN in Automated Weed Detection</strong><br/>
+        [cite_start]<span style="color:var(--muted); font-size:0.9rem;">4th IEEE International Conference on Internet of Things (ISBN: 978-1-7281-1253-4) [cite: 61, 62]</span>
+      </li>
+      <li>
+        <strong style="color:#fff;">Intelligent Skin Cancer Detection Mobile Application Using CNN</strong><br/>
+        [cite_start]<span style="color:var(--muted); font-size:0.9rem;">Journal of Advanced Research in Dynamical and Control Systems (Vol 11, Issue 07) [cite: 63]</span>
+      </li>
     </ul>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact & Availability</h2>
-  <div class="contact">
-    <p><strong>Email:</strong> tiwari@rptu.de</p>
-    <p><strong>Location:</strong> Germany</p>
-    <p><strong>Status:</strong> Working and living in Germany</p>
-    <p><strong>GitHub:</strong> github.com/Shiv1799</p>
-  </div>
-</section>
-
 <footer>
-  © 2025 Om Tiwari · GitHub Pages
+  <p>© 2025 Om Tiwari. Built with clean code.</p>
+  <p style="font-size:0.8rem; margin-top:8px;">
+    <a href="mailto:omtuk17@gmail.com" style="color:var(--muted);">omtuk17@gmail.com</a> • 
+    Based in Germany
+  </p>
 </footer>
 
 </body>
