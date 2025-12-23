@@ -6,7 +6,6 @@
 
   <title>Om Tiwari | Robotics & AI Engineer</title>
   <meta name="description" content="Om Tiwari – Robotics, Autonomous Systems, Computer Vision and Generative AI Engineer." />
-
   <base href="/" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -51,7 +50,6 @@
     }
 
     nav strong { font-size: 1.1rem; }
-
     nav a { margin-left: 20px; font-size: 0.9rem; }
 
     /* HERO */
@@ -73,8 +71,8 @@
 
     section { padding: 100px 10%; }
 
-    h2 { font-size: 2.5rem; margin-bottom: 30px; }
-    h3 { color: var(--accent2); margin-bottom: 20px; }
+    h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    h3 { color: var(--accent2); margin-bottom: 25px; }
 
     /* CONTACT */
     .contact {
@@ -86,14 +84,24 @@
     }
 
     /* FILTERS */
+    .filters {
+      margin-bottom: 30px;
+    }
+
     .filters button {
       margin-right: 12px;
-      padding: 8px 16px;
+      padding: 8px 18px;
       border-radius: 20px;
       border: 1px solid var(--accent);
       background: none;
       color: var(--accent);
       cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .filters button.active {
+      background: var(--accent);
+      color: #0b0e14;
     }
 
     /* PROJECT GRID */
@@ -101,13 +109,11 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 32px;
-      margin-top: 40px;
     }
 
     .card {
       background: var(--card);
       border-radius: 16px;
-      overflow: hidden;
       border: 1px solid #1f2937;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -157,119 +163,11 @@
   </p>
 </header>
 
-<!-- CONTACT (ABOVE PROJECTS as requested) -->
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact">
     <p><strong>Email:</strong> your.email@domain.com</p>
     <p><strong>Location:</strong> Germany</p>
     <p><strong>GitHub:</strong> <a href="https://github.com/Shiv1799" target="_blank">github.com/Shiv1799</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/om-tiwari-b1687314b" target="_blank">View Profile ↗</a></p>
-    <p><strong>CV:</strong> <a href="assets/pdf/Om_Tiwari_CV.pdf" target="_blank">Download PDF ↗</a></p>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="filters">
-    <button onclick="filterProjects('all')">All</button>
-    <button onclick="filterProjects('robotics')">Robotics</button>
-    <button onclick="filterProjects('genai')">Generative AI</button>
-    <button onclick="filterProjects('vision')">Computer Vision</button>
-  </div>
-
-  <div id="projects-container" class="grid"></div>
-</section>
-
-<section id="publications">
-  <h2>Thesis & Academic Work</h2>
-  <ul>
-    <li>
-      <a href="https://github.com/Shiv1799/Master-Thesis-Is-Pseudo-LiDAR-better-than-LiDAR-" target="_blank">
-        Master Thesis – Is Pseudo-LiDAR Better Than LiDAR? ↗
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/Shiv1799/Safety-Critical-Multi-Modal-Object-Detection-in-Autonomous-System" target="_blank">
-        Seminar – Safety-Critical Multi-Modal Object Detection ↗
-      </a>
-    </li>
-  </ul>
-</section>
-
-<footer>
-  © 2025 Om Tiwari · GitHub Pages
-</footer>
-
-<script>
-const projects = [
-  {
-    title: "AI Meeting Assistant",
-    category: "genai",
-    link: "https://github.com/Shiv1799/AI-Meeting-Assistant",
-    desc: "LLM-based system for transcription, terminology correction, and structured meeting summaries.",
-    tags: ["LLMs", "NLP"]
-  },
-  {
-    title: "Fashion Style Analyzer",
-    category: "vision",
-    link: "https://github.com/Shiv1799/Fashion-Style-Analyzer",
-    desc: "Multimodal vision-language fashion analysis using embeddings and RAG.",
-    tags: ["VLM", "RAG"]
-  },
-  {
-    title: "Model Quantization in PyTorch",
-    category: "genai",
-    link: "https://github.com/Shiv1799/Quantization_pytorch",
-    desc: "Quantization techniques for efficient deep learning inference.",
-    tags: ["PyTorch", "Optimization"]
-  },
-  {
-    title: "Erasmus Industrial Challenge – OV2SLAM",
-    category: "robotics",
-    link: "https://github.com/Shiv1799/Erasmus_industrial_challenge_Ov2slam",
-    desc: "Visual SLAM project focusing on robustness in real-world environments.",
-    tags: ["SLAM", "Robotics"]
-  },
-  {
-    title: "Self-Driving Car (Bachelor Project)",
-    category: "robotics",
-    link: "https://github.com/Shiv1799/self_driving_car",
-    desc: "End-to-end autonomous driving pipeline with perception and control.",
-    tags: ["Autonomous Driving", "Computer Vision"]
-  }
-];
-
-const container = document.getElementById("projects-container");
-
-function renderProjects(filter) {
-  container.innerHTML = "";
-  projects
-    .filter(p => filter === "all" || p.category === filter)
-    .forEach(p => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-        <div class="card-content">
-          <h3>${p.title}</h3>
-          <p>${p.desc}</p>
-          ${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}
-          <div style="margin-top:14px;">
-            <a href="${p.link}" target="_blank">View Project ↗</a>
-          </div>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-}
-
-function filterProjects(cat) {
-  renderProjects(cat);
-}
-
-renderProjects("all");
-</script>
-
-</body>
-</html>
+    <p><strong>LinkedIn:</strong> <a href="https://linked
