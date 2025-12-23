@@ -6,6 +6,7 @@
 
   <title>Om Tiwari | Robotics & AI Engineer</title>
   <meta name="description" content="Om Tiwari – Robotics, Autonomous Systems, Computer Vision and Generative AI Engineer." />
+
   <base href="/" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -82,17 +83,15 @@
       align-items: start;
     }
 
-    .photo-placeholder {
+    /* ✅ THIS WAS MISSING BEFORE */
+    .profile-photo {
       width: 260px;
       height: 320px;
+      object-fit: cover;
       border-radius: 140px;
-      background: linear-gradient(135deg, #1f2937, #111827);
       border: 1px solid #1f2937;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 0.9rem;
+      display: block;
+      background: #111827;
     }
 
     /* CONTACT */
@@ -187,24 +186,22 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <h2>About Me</h2><!-- refresh -->
+  <h2>About Me</h2>
+
   <div class="about-grid">
-    <img src="assets/om_tiwari.jpg"alt="Om Tiwari"class="profile-photo"/>
+    <img
+      src="assets/om_pic.jpg"
+      alt="Om Tiwari"
+      class="profile-photo"
+    />
+
     <div>
       <p>
-        👋 I’m a <strong>Robotics & Perception Software Engineer</strong> with a Master’s in Computer Science
-        (Intelligent Systems & Robotics), and hands-on experience building
+        👋 I’m a <strong>Robotics & Perception Software Engineer</strong> with a Master’s in Computer
+        Science (Intelligent Systems & Robotics), and hands-on experience building
         <strong>real-time, machine-learning–driven perception, navigation, and autonomy software</strong>
         for intelligent robots and autonomous vehicles.
       </p>
-  .profile-photo {
-    width: 260px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 140px;
-    border: 1px solid #1f2937;
-    display: block;
-  }
 
       <p>
         I specialize in engineering <strong>scalable robotics systems</strong> that combine
@@ -224,7 +221,7 @@
       <h3>Core Competencies</h3>
       <ul>
         <li><strong>Robotics Software:</strong> ROS/ROS2, C++, Python · Autonomous Navigation & Control · Sensor Fusion · 3D Perception</li>
-        <li><strong>Machine Learning & Computer Vision:</strong> PyTorch, TensorFlow, CNNs, detection & segmentation</li>
+        <li><strong>Machine Learning & Computer Vision:</strong> PyTorch, CNNs, detection & segmentation</li>
         <li><strong>Simulation & Systems:</strong> CARLA, Docker, Linux, real-time systems</li>
         <li><strong>Generative AI & Multimodal Intelligence:</strong> Vision–Language Models, RAG, LLMs</li>
         <li><strong>Prototype → Deployment:</strong> Research-grounded engineering with measurable impact</li>
