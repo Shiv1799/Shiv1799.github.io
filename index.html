@@ -147,6 +147,7 @@
       gap: 24px;
     }
 
+    /* Generic Card */
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -158,6 +159,13 @@
       height: 100%;
       position: relative;
       overflow: hidden;
+    }
+    
+    /* Make the whole card clickable for projects */
+    a.card {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
     }
 
     .card:hover {
@@ -194,8 +202,8 @@
       flex-grow: 1;
     }
 
-    /* Bottom Tags (Tech Stack / Degree type) */
-    .bottom-tag {
+    /* Bottom Tags */
+    .bottom-tag, .tech-stack {
       margin-top: auto;
       padding-top: 16px;
       border-top: 1px solid #374151;
@@ -203,6 +211,19 @@
       color: #fff;
       font-family: monospace;
     }
+
+    /* Link Icon overlay */
+    .link-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.6);
+      padding: 6px;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card:hover .link-icon { opacity: 1; }
 
     /* PROFILE / ABOUT */
     .about-grid {
@@ -346,7 +367,7 @@
         <span>Hitachi Astemo</span>
         <span>Jan 2025 – Present</span>
       </div>
-      <p>Integrated a ROS2 3D object detection pipeline with 4 cameras and 2 LiDARs. Resolved stereo vision synchronization issues, improving accuracy by 15% and reducing false positives by 30% via SiL testing in CARLA.</p>
+      <p>Integrated a ROS2 3D object detection pipeline with 4 cameras and 2 LiDARs. Resolved stereo vision synchronization issues, improving accuracy by 15% via SiL testing.</p>
       <div class="bottom-tag">🛠 ROS2 • Docker • CARLA • LiDAR</div>
     </div>
 
@@ -357,7 +378,7 @@
         <span>BOSCH</span>
         <span>Jan 2024 – Jun 2024</span>
       </div>
-      <p>Led ML integration for Franka Panda robot cloth folding. Used MoveIt and FlexBE for motion planning and Reinforcement Learning to refine manipulation, improving efficiency by ~20%.</p>
+      <p>Led ML integration for Franka Panda robot cloth folding. Used MoveIt and FlexBE for motion planning and Reinforcement Learning to refine manipulation.</p>
       <div class="bottom-tag">🛠 MoveIt • FlexBE • RL • Python</div>
     </div>
 
@@ -368,7 +389,7 @@
         <span>DFKI</span>
         <span>Jun 2021 – Jun 2023</span>
       </div>
-      <p>Boosted YOLOv4 detection mAP from 90.5% to 95.6% using synthetic datasets (NVIDIA NDDS). Implemented ROS task navigation and MQTT communication for real-time messaging.</p>
+      <p>Boosted YOLOv4 detection mAP from 90.5% to 95.6% using synthetic datasets (NVIDIA NDDS). Implemented ROS task navigation and MQTT communication.</p>
       <div class="bottom-tag">🛠 YOLOv4 • NVIDIA NDDS • MQTT</div>
     </div>
 
@@ -379,7 +400,7 @@
         <span>KaRaT Racing Team</span>
         <span>Nov 2021 – Nov 2022</span>
       </div>
-      <p>Integrated Tiny YOLO and PointNet into a ROS perception stack on Nvidia Jetson. Implemented visual SLAM using GNSS and stereo vision for autonomous racing scenarios.</p>
+      <p>Integrated Tiny YOLO and PointNet into a ROS perception stack on Nvidia Jetson. Implemented visual SLAM using GNSS and stereo vision.</p>
       <div class="bottom-tag">🛠 Nvidia Jetson • SLAM • PointNet</div>
     </div>
 
@@ -393,65 +414,106 @@
     <button class="filter-btn proj-btn active" onclick="filterProjects('all')">All Projects</button>
     <button class="filter-btn proj-btn" onclick="filterProjects('robotics')">Robotics</button>
     <button class="filter-btn proj-btn" onclick="filterProjects('gen-ai')">Gen AI</button>
+    <button class="filter-btn proj-btn" onclick="filterProjects('cv')">Computer Vision</button>
     <button class="filter-btn proj-btn" onclick="filterProjects('upcoming')">Upcoming</button>
   </div>
 
   <div class="grid">
     
-    <div class="card project-card" data-category="robotics">
-      <img src="assets/project1.jpg" alt="Dependable Architecture" class="card-img">
-      <h3>Dependable Behavior Arch.</h3>
-      <div class="card-meta">
-        <span>RPTU Project</span>
-        <span>ROS2 Safety</span>
-      </div>
-      <p>Built ROS2 behavior modules with failsafe logic for real-time obstacle detection. Integrated AES256-CBC encryption for secure data communication.</p>
-      <div class="bottom-tag">🛠 ROS2 • C++ • Gazebo</div>
-    </div>
-
-    <div class="card project-card" data-category="robotics">
-      <img src="assets/project2.jpg" alt="AR HUD" class="card-img">
-      <h3>AR HUD in ROS</h3>
-      <div class="card-meta">
-        <span>Erasmus Mundus</span>
-        <span>SLAM</span>
-      </div>
-      <p>Ported OV2SLAM to ROS2, improving processing speed by 30%. Benchmarked on KITTI datasets with 0.5% average error.</p>
-      <div class="bottom-tag">🛠 OV2SLAM • ROS2 • Optimization</div>
-    </div>
-
-    <div class="card project-card" data-category="robotics">
-      <img src="assets/project3.jpg" alt="Weed Detection" class="card-img">
-      <h3>Weed Detection Bot</h3>
-      <div class="card-meta">
-        <span>IoT & Vision</span>
-        <span>Embedded</span>
-      </div>
-      <p>Automated weed detection system using CNNs deployed on embedded hardware. Published in IEEE International Conference on IoT.</p>
-      <div class="bottom-tag">🛠 CNN • Raspberry Pi • OpenCV</div>
-    </div>
-
-    <div class="card project-card" data-category="gen-ai">
-      <img src="assets/project4.jpg" alt="Gen AI Project" class="card-img">
-      <h3>Pseudo-LiDAR (Gen AI)</h3>
-      <div class="card-meta">
-        <span>Master Thesis</span>
-        <span>Generative Depth</span>
-      </div>
-      <p>Generative AI approach converting 2D stereo images into 3D point clouds. Used deep learning to generate high-fidelity 3D environments.</p>
-      <div class="bottom-tag">🛠 PyTorch • Generative Models</div>
-    </div>
-
-    <div class="card project-card" data-category="upcoming">
-      <img src="assets/project5.jpg" alt="Upcoming Project" class="card-img">
-      <h3>Humanoid Navigation</h3>
+    <a href="#" class="card project-card" data-category="upcoming robotics">
+      <img src="assets/project_gesture.jpg" alt="Gesture Control" class="card-img">
+      <h3>Gesture-Based Robot Teleoperation</h3>
       <div class="card-meta">
         <span>Upcoming</span>
-        <span>Sim2Real</span>
+        <span>HRI</span>
       </div>
-      <p>Developing a reinforcement learning framework for humanoid robot navigation using Large Language Models for task planning.</p>
-      <div class="bottom-tag">🛠 LLMs • Reinforcement Learning</div>
-    </div>
+      <p><strong>Vision-based hand-gesture control of a simulated robot using ROS and Gazebo.</strong></p>
+      <div class="bottom-tag">🛠 ROS • Gazebo • Gesture Control</div>
+    </a>
+
+    <a href="https://github.com/Shiv1799/Fashion-Style-Analyzer" target="_blank" class="card project-card" data-category="gen-ai cv">
+      <div class="link-icon">↗</div>
+      <img src="assets/project_fashion.jpg" alt="Fashion Style Analyzer" class="card-img">
+      <h3>Fashion Style Analyzer</h3>
+      <div class="card-meta">
+        <span>Gen AI & CV</span>
+        <span>RAG System</span>
+      </div>
+      <p>Multimodal Vision-Language RAG System capable of analyzing clothing styles and trends from images.</p>
+      <div class="bottom-tag">🛠 RAG • Multimodal • Gen AI</div>
+    </a>
+
+    <a href="https://github.com/Shiv1799/AI-Meeting-Assistant" target="_blank" class="card project-card" data-category="gen-ai">
+      <div class="link-icon">↗</div>
+      <img src="assets/project_meeting.jpg" alt="MeetingMind AI" class="card-img">
+      <h3>MeetingMind AI</h3>
+      <div class="card-meta">
+        <span>Gen AI</span>
+        <span>NLP</span>
+      </div>
+      <p>LLM-Powered Meeting Intelligence Platform that transcribes and summarizes conversations automatically.</p>
+      <div class="bottom-tag">🛠 LLMs • NLP • Intelligence</div>
+    </a>
+
+    <a href="https://github.com/Shiv1799/self_driving_car" target="_blank" class="card project-card" data-category="robotics">
+      <div class="link-icon">↗</div>
+      <img src="assets/project_car.jpg" alt="Self Driving Car" class="card-img">
+      <h3>Self Driving Car</h3>
+      <div class="card-meta">
+        <span>Robotics</span>
+        <span>Navigation</span>
+      </div>
+      <p>Prototype autonomous vehicle implementation featuring lane detection and basic navigation logic on Raspberry Pi.</p>
+      <div class="bottom-tag">🛠 Python • OpenCV • Raspberry Pi</div>
+    </a>
+
+    <a href="https://github.com/Shiv1799/Master-Thesis-Is-Pseudo-LiDAR-better-than-LiDAR-" target="_blank" class="card project-card" data-category="robotics cv">
+      <div class="link-icon">↗</div>
+      <img src="assets/project_thesis.jpg" alt="Master Thesis" class="card-img">
+      <h3>Pseudo-LiDAR (Master Thesis)</h3>
+      <div class="card-meta">
+        <span>Robotics & CV</span>
+        <span>Thesis</span>
+      </div>
+      <p>Comparative analysis: "Is Pseudo-LiDAR better than LiDAR?" Implemented 3D object detection pipelines.</p>
+      <div class="bottom-tag">🛠 ROS2 • PyTorch • KITTI</div>
+    </a>
+
+    <a href="https://github.com/Shiv1799/Safety-Critical-Multi-Modal-Object-Detection-in-Autonomous-System" target="_blank" class="card project-card" data-category="robotics">
+      <div class="link-icon">↗</div>
+      <img src="assets/project_seminar.jpg" alt="Seminar" class="card-img">
+      <h3>Safety-Critical Detection</h3>
+      <div class="card-meta">
+        <span>Seminar</span>
+        <span>Safety</span>
+      </div>
+      <p>Multi-Modal Object Detection in Autonomous Systems focusing on sensor fusion (LiDAR, Radar, Camera).</p>
+      <div class="bottom-tag">🛠 Sensor Fusion • Safety</div>
+    </a>
+
+    <a href="https://github.com/Shiv1799/Erasmus_industrial_challenge_Ov2slam" target="_blank" class="card project-card" data-category="cv robotics">
+      <div class="link-icon">↗</div>
+      <img src="assets/project_hud.jpg" alt="AR HUD" class="card-img">
+      <h3>Erasmus Challenge (AR HUD)</h3>
+      <div class="card-meta">
+        <span>CV & Robotics</span>
+        <span>SLAM</span>
+      </div>
+      <p>Ported OV2SLAM to ROS2 for an AR Heads-Up Display. Optimized threading to improve speed by 30%.</p>
+      <div class="bottom-tag">🛠 OV2SLAM • ROS2 • C++</div>
+    </a>
+
+    <a href="https://github.com/Shiv1799/Weed-Detection-in-crops-using-Neuralnetworks-Transfer-Learning-" target="_blank" class="card project-card" data-category="cv">
+      <div class="link-icon">↗</div>
+      <img src="assets/project_weed.jpg" alt="Weed Detection" class="card-img">
+      <h3>Weed Detection in Agriculture</h3>
+      <div class="card-meta">
+        <span>Computer Vision</span>
+        <span>AgriTech</span>
+      </div>
+      <p>Utilizing Neural Networks and Transfer Learning for high-precision weed detection in crop fields.</p>
+      <div class="bottom-tag">🛠 CNN • Transfer Learning</div>
+    </a>
 
   </div>
 </section>
@@ -538,13 +600,19 @@
     const buttons = document.querySelectorAll('.' + btnClass);
     buttons.forEach(btn => btn.classList.remove('active'));
     
+    // Find active button
     const activeBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(category));
     if (activeBtn) activeBtn.classList.add('active');
 
     const cards = document.querySelectorAll('.' + cardClass);
     cards.forEach(card => {
-      const cardCategory = card.getAttribute('data-category');
-      if (category === 'all' || cardCategory === category) {
+      // Get the categories string (e.g. "gen-ai cv")
+      const cardCategories = card.getAttribute('data-category');
+      
+      if (category === 'all') {
+        card.style.display = 'flex';
+      } else if (cardCategories.includes(category)) { 
+        // Checks if the category exists within the card's category string
         card.style.display = 'flex';
       } else {
         card.style.display = 'none';
